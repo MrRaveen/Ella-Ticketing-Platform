@@ -1,0 +1,133 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.4 Chrome/138.0.7204.97 Electron/37.2.1 Safari/537.36" version="28.0.4">
+  <diagram name="Page-1" id="EpHYtSoF0FXXeMd0J8oP">
+    <mxGraphModel dx="1744" dy="1074" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="KA-pWxac3Vzkd2vDObct-1" value="Admin service" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="590" y="1540" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-2" value="User service" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="590" y="220" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-3" value="Account creation" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="410" y="20" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-4" value="View account" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="410" y="80" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-5" value="Login" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="410" y="150" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-6" value="Update account" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="410" y="220" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-7" value="Account verification" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="410" y="280" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-8" value="Account remove" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="410" y="350" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-11" value="userAcc&lt;div&gt;userInfo&lt;/div&gt;&lt;div&gt;assignedRoles&lt;/div&gt;&lt;div&gt;sessions&lt;/div&gt;" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="240" y="200" width="100" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-12" value="Ticket management" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="590" y="600" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-13" value="view all booked tockets" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="410" y="520" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-14" value="view history tickets" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="410" y="580" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-16" value="Book train" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="590" y="930" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-17" value="Check availability" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="410" y="790" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-18" value="Display train info" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="410" y="860" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-19" value="Select train and data entry part" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="410" y="930" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-20" value="Save the ticket" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="410" y="1000" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-21" value="Make the payment" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="410" y="1070" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-22" value="bookedTickets&lt;div&gt;paymentHistory&lt;/div&gt;&lt;div&gt;trains&lt;/div&gt;&lt;div&gt;frequentlyUsedTrains&lt;/div&gt;&lt;div&gt;savedTrains&lt;/div&gt;&lt;div&gt;trainTime&lt;/div&gt;" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="210" y="540" width="130" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-23" value="view saved tickets" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="410" y="690" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-25" value="view frequently accessed tickets" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="410" y="630" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-26" value="notification setting" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="410" y="1200" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-27" value="AccSettings" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="580" y="1230" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-28" value="Theme/ about/ privacy policy" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="410" y="1260" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-29" value="Logout" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="410" y="410" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-30" value="bookedTickets&lt;div&gt;paymentHistory&lt;/div&gt;&lt;div&gt;trains&lt;/div&gt;&lt;div&gt;trainTime&lt;/div&gt;&lt;div&gt;seatCount&lt;/div&gt;&lt;div&gt;routeLocations&lt;/div&gt;&lt;div&gt;classes&lt;/div&gt;&lt;div&gt;route&lt;/div&gt;&lt;div&gt;stations&lt;/div&gt;&lt;div&gt;platformInfo&lt;/div&gt;&lt;div&gt;trainClass&lt;/div&gt;&lt;div&gt;userAccInfo&lt;/div&gt;" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="210" y="865" width="130" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="T8bomBvSMN9pmcquMgUj-2" value="bookedTickets&lt;div&gt;trains&lt;/div&gt;&lt;div&gt;trainTime&lt;/div&gt;&lt;div&gt;routeLocations&lt;/div&gt;&lt;div&gt;classes&lt;/div&gt;&lt;div&gt;route&lt;/div&gt;&lt;div&gt;stations&lt;/div&gt;&lt;div&gt;platformInfo&lt;/div&gt;&lt;div&gt;trainClass&lt;/div&gt;&lt;div&gt;employee&lt;/div&gt;&lt;div&gt;trainInfo&lt;/div&gt;&lt;div&gt;admin&lt;/div&gt;&lt;div&gt;seatCount&lt;/div&gt;&lt;div&gt;autoDaySettings&lt;/div&gt;" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="210" y="1420" width="100" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="T8bomBvSMN9pmcquMgUj-3" value="Login" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="410" y="1410" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="T8bomBvSMN9pmcquMgUj-4" value="Manage trains" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="410" y="1470" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="T8bomBvSMN9pmcquMgUj-5" value="Manage users" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="410" y="1530" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="T8bomBvSMN9pmcquMgUj-6" value="Manage employee (to main admin)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="395" y="1590" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="T8bomBvSMN9pmcquMgUj-7" value="settings" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="410" y="1670" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="T8bomBvSMN9pmcquMgUj-8" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;rotation=-180;" vertex="1" parent="1">
+          <mxGeometry x="540" y="20" width="50" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="T8bomBvSMN9pmcquMgUj-9" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="20" width="50" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="T8bomBvSMN9pmcquMgUj-10" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;rotation=-180;" vertex="1" parent="1">
+          <mxGeometry x="540" y="520" width="50" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="T8bomBvSMN9pmcquMgUj-11" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="520" width="50" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="T8bomBvSMN9pmcquMgUj-12" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;rotation=-180;" vertex="1" parent="1">
+          <mxGeometry x="540" y="790" width="50" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="T8bomBvSMN9pmcquMgUj-13" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="800" width="50" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="T8bomBvSMN9pmcquMgUj-14" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;rotation=-180;" vertex="1" parent="1">
+          <mxGeometry x="530" y="1200" width="50" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="T8bomBvSMN9pmcquMgUj-15" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="1410" width="50" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="T8bomBvSMN9pmcquMgUj-16" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;rotation=-180;" vertex="1" parent="1">
+          <mxGeometry x="540" y="1410" width="50" height="300" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,88 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.4 Chrome/138.0.7204.97 Electron/37.2.1 Safari/537.36" version="28.0.4">
+  <diagram name="Page-1" id="EpHYtSoF0FXXeMd0J8oP">
+    <mxGraphModel dx="1938" dy="1193" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="KA-pWxac3Vzkd2vDObct-1" value="Admin service" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="630" y="1430" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-2" value="User service" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="630" y="240" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-3" value="Account creation" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="360" y="40" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-4" value="View account" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="360" y="100" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-5" value="Login" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="360" y="170" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-6" value="Update account" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="360" y="240" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-7" value="Account verification" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="360" y="300" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-8" value="Account remove" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="360" y="370" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-11" value="userAcc&lt;div&gt;userInfo&lt;/div&gt;&lt;div&gt;assignedRoles&lt;/div&gt;&lt;div&gt;sessions&lt;/div&gt;" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="110" y="220" width="100" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-12" value="Ticket management" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="630" y="580" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-13" value="view all booked tockets" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="360" y="540" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-14" value="view history tickets" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="360" y="600" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-16" value="Book train" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="630" y="940" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-17" value="Check availability" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="360" y="810" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-18" value="Display train info" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="360" y="880" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-19" value="Select train and data entry part" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="360" y="950" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-20" value="Save the ticket" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="360" y="1020" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-21" value="Make the payment" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="360" y="1090" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-22" value="bookedTickets&lt;div&gt;paymentHistory&lt;/div&gt;&lt;div&gt;trains&lt;/div&gt;&lt;div&gt;frequentlyUsedTrains&lt;/div&gt;&lt;div&gt;savedTrains&lt;/div&gt;&lt;div&gt;trainTime&lt;/div&gt;" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="110" y="560" width="130" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-23" value="view saved tickets" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="360" y="710" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-25" value="view frequently accessed tickets" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="360" y="650" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-26" value="notification setting" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="360" y="1220" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-27" value="AccSettings" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="630" y="1240" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-28" value="Theme/ about/ privacy policy" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="360" y="1280" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-29" value="Logout" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="360" y="430" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KA-pWxac3Vzkd2vDObct-30" value="bookedTickets&lt;div&gt;paymentHistory&lt;/div&gt;&lt;div&gt;trains&lt;/div&gt;&lt;div&gt;trainTime&lt;/div&gt;&lt;div&gt;seatCount&lt;/div&gt;&lt;div&gt;routeLocations&lt;/div&gt;&lt;div&gt;classes&lt;/div&gt;&lt;div&gt;route&lt;/div&gt;&lt;div&gt;stations&lt;/div&gt;&lt;div&gt;platformInfo&lt;/div&gt;&lt;div&gt;trainClass&lt;/div&gt;&lt;div&gt;userAccInfo&lt;/div&gt;" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="110" y="860" width="130" height="190" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
