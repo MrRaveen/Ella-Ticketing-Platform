@@ -26,12 +26,9 @@ INSERT INTO user_info (fname, lname, address, DOB, provience, city, NIC, contact
 ('Sahan', 'De Silva', '90 Ocean Drive, Negombo', TO_DATE('1990-08-12', 'YYYY-MM-DD'), 'Western', 'Negombo', '902345678V', '0781239876', 'Ocean Drive');
 
 SELECT *FROM system.user_info;
+SELECT *FROM system.userAcc;
 SELECT SYS_CONTEXT('USERENV','CURRENT_SCHEMA') FROM dual;
 SELECT * FROM USER_INFO;
-
-
-
-
 
 CREATE TABLE userAcc(
 accountID NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
