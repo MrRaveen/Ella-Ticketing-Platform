@@ -13,8 +13,12 @@ import com.example.userService.Model.UserAcc;
 import com.example.userService.Model.UserInfo;
 import com.example.userService.Request.createAccountRequest;
 import com.example.userService.Service.CreateAccProcess;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 @RestController
 public class AccessPoint {
+	private Logger log = LoggerFactory.getLogger(AccessPoint.class); 
 	@Autowired
     private CreateAccProcess service;
     @PostMapping("/createAcc")
@@ -34,5 +38,10 @@ public class AccessPoint {
             e.printStackTrace();
             return ResponseEntity.status(500).body("Error: " + e.getMessage());
         }
+    }
+    @GetMapping("/test")
+    public String test() {
+    	log.info("hallow world");
+    	return "log wrote";
     }
 }

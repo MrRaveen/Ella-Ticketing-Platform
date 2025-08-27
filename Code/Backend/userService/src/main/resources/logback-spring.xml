@@ -15,8 +15,8 @@
         </http>
         <format>
             <label>
-                <pattern>app=my-hotel-svc-app, environment=production, region=eu-west-1, level=%level</pattern>
-                <readMarkers>true</readMarkers>
+                <!-- Remove spaces after commas in labels -->
+                <pattern>app=my-hotel-svc-app,environment=production,region=eu-west-1,level=%level</pattern>
             </label>
             <message>
                 <pattern>
@@ -24,6 +24,7 @@
                 </pattern>
             </message>
         </format>
+        <verbose>true</verbose><!--enable logging-->
     </appender>
 
 
