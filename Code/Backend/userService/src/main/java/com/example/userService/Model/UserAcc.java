@@ -1,14 +1,13 @@
 package com.example.userService.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+
+import com.example.userService.Configuration.StringCryptoConverter;
 @Entity
 @Table(name = "USER_ACC", schema = "SYSTEM")
 public class UserAcc {
-	   @Id
+	    @Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY) // works for Oracle 12c+ with IDENTITY
 	    @Column(name = "ACCOUNTID")
 	    private int accountId;
@@ -25,10 +24,12 @@ public class UserAcc {
 	    @Column(name = "LASTACTIVETIME")
 	    private LocalDateTime lastActiveTime;
 
-	    @Column(name = "EMAIL", length = 30)
+	    @Column(name = "EMAIL", length = 800)
+	    @Convert(converter = StringCryptoConverter.class)
 	    private String email;
 
-	    @Column(name = "USER_PASSWORD", length = 30)
+	    @Column(name = "USER_PASSWORD", length = 800)
+	    @Convert(converter = StringCryptoConverter.class)
 	    private String userPassword;
 
 	    // Many accounts belong to one user

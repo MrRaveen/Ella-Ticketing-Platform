@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.userService.Model.UserAcc;
 import com.example.userService.Model.UserInfo;
+import com.example.userService.Repositories.UserAccRepo;
+import com.example.userService.Repositories.userInfoRepository;
 import com.example.userService.Request.createAccountRequest;
 import com.example.userService.Service.CreateAccProcess;
 
@@ -21,6 +23,8 @@ public class AccessPoint {
 	private Logger log = LoggerFactory.getLogger(AccessPoint.class); 
 	@Autowired
     private CreateAccProcess service;
+	@Autowired
+	private userInfoRepository repo1;
     @PostMapping("/createAcc")
     public ResponseEntity<?> createAccount(@RequestBody createAccountRequest accountDetails) {
         try {
@@ -39,9 +43,14 @@ public class AccessPoint {
             return ResponseEntity.status(500).body("Error: " + e.getMessage());
         }
     }
-    @GetMapping("/test")
-    public String test() {
-    	log.info("hallow world");
-    	return "log wrote";
+    //testing only
+    @GetMapping("/getAllData")
+    public List<UserInfo> getPrcess(){
+    	return repo1.findAll();
     }
+//    @GetMapping("/test")
+//    public String test() {
+//    	log.info("Hello world");
+//    	return "log wrote";
+//    }
 }

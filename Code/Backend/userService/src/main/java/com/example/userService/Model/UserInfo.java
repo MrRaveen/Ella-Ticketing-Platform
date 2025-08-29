@@ -1,6 +1,10 @@
 package com.example.userService.Model;
 import java.time.LocalDate;
+
+import com.example.userService.Configuration.StringCryptoConverter;
+
 import jakarta.persistence.Column;
+import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,31 +21,39 @@ public class UserInfo {
 	    @Column(name = "USERID")
 	    private int userId;
 
-	    @Column(name = "FNAME", length = 20)
+	    @Column(name = "FNAME", length = 800)
+	    @Convert(converter = StringCryptoConverter.class)
 	    private String fname;
 
-	    @Column(name = "LNAME", length = 40)
+	    @Column(name = "LNAME", length = 800)
+	    @Convert(converter = StringCryptoConverter.class)
 	    private String lname;
 
-	    @Column(name = "ADDRESS", length = 120)
+	    @Column(name = "ADDRESS", length = 800)
+	    @Convert(converter = StringCryptoConverter.class)
 	    private String address;
 
 	    @Column(name = "DOB")
 	    private LocalDate dob;
 
-	    @Column(name = "PROVIENCE", length = 20)
+	    @Column(name = "PROVIENCE", length = 800)
+	    @Convert(converter = StringCryptoConverter.class)
 	    private String provience;
 
-	    @Column(name = "CITY", length = 20)
+	    @Column(name = "CITY", length = 800)
+	    @Convert(converter = StringCryptoConverter.class)
 	    private String city;
 
-	    @Column(name = "NIC", length = 60)
+	    @Column(name = "NIC", length = 800)
+	    @Convert(converter = StringCryptoConverter.class)
 	    private String nic;
 
-	    @Column(name = "CONTACTNO", length = 20)
+	    @Column(name = "CONTACTNO", length = 800)
+	    @Convert(converter = StringCryptoConverter.class)
 	    private String contactNo;
 
-	    @Column(name = "STREETNAME", length = 60)
+	    @Column(name = "STREETNAME", length = 800)
+	    @Convert(converter = StringCryptoConverter.class)
 	    private String streetName;
 		public UserInfo() {
 		}

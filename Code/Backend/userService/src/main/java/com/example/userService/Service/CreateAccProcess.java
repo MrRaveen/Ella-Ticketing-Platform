@@ -23,6 +23,7 @@ public class CreateAccProcess {
     		log.info("Data saved (CreateAccService.java)");
     		return true;
     	}catch(Exception e) {
+    		log.info("Error occured when savind data (createAccProcess) : " + e.toString());
     		throw new Exception("Error occured when saving data (CreateAccProcess) : " + e.toString());
     	}
     }

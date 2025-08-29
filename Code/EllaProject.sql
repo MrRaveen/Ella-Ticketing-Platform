@@ -10,6 +10,7 @@ NIC VARCHAR2(60),
 contactNo VARCHAR2(20),
 streetName VARCHAR2(60)
 );
+DROP TABLE USER_INFO;
 INSERT INTO user_info (fname, lname, address, DOB, provience, city, NIC, contactNo, streetName) VALUES
 ('Raveen', 'Perera', '123 Lake Road, Colombo', TO_DATE('1995-06-15', 'YYYY-MM-DD'), 'Western', 'Colombo', '952345678V', '0771234567', 'Lake Road');
 
