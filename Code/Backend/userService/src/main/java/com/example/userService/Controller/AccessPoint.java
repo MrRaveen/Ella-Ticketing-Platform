@@ -8,13 +8,16 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.userService.Model.UserAcc;
 import com.example.userService.Model.UserInfo;
 import com.example.userService.Repositories.UserAccRepo;
 import com.example.userService.Repositories.userInfoRepository;
 import com.example.userService.Request.createAccountRequest;
+import com.example.userService.Request.loginRequest;
 import com.example.userService.Service.CreateAccProcess;
+import com.example.userService.Service.LoginService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,6 +28,10 @@ public class AccessPoint {
     private CreateAccProcess service;
 	@Autowired
 	private userInfoRepository repo1;
+	@Autowired
+	private LoginService loginService;
+	@Autowired
+	private UserAccRepo accRepoAcc;
     @PostMapping("/createAcc")
     public ResponseEntity<?> createAccount(@RequestBody createAccountRequest accountDetails) {
         try {
@@ -43,10 +50,18 @@ public class AccessPoint {
             return ResponseEntity.status(500).body("Error: " + e.getMessage());
         }
     }
+    @GetMapping("/logIn")
+    public ResponseEntity<?> loginProcess(@RequestBody loginRequest request) {
+    	try {
+    		return ResponseEntity.status(200).body(loginService.loginProcess(request.getMail(),request.getPassword()));
+    	}catch(Exception e) {
+    		return ResponseEntity.status(500).body("Error occured in controller (AccessPoint) : " + e.toString());
+    	}
+    }
     //testing only
     @GetMapping("/getAllData")
-    public List<UserInfo> getPrcess(){
-    	return repo1.findAll();
+    public List<UserAcc> getPrcess(){
+    	return accRepoAcc.findAll();
     }
 //    @GetMapping("/test")
 //    public String test() {

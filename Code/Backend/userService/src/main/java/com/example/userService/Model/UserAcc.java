@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 import com.example.userService.Configuration.StringCryptoConverter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Entity
 @Table(name = "USER_ACC", schema = "SYSTEM")
 public class UserAcc {
@@ -25,9 +27,9 @@ public class UserAcc {
 	    private LocalDateTime lastActiveTime;
 
 	    @Column(name = "EMAIL", length = 800)
-	    @Convert(converter = StringCryptoConverter.class)
+//	    @Convert(converter = StringCryptoConverter.class)
 	    private String email;
-
+	    
 	    @Column(name = "USER_PASSWORD", length = 800)
 	    @Convert(converter = StringCryptoConverter.class)
 	    private String userPassword;
@@ -35,6 +37,7 @@ public class UserAcc {
 	    // Many accounts belong to one user
 	    @OneToOne(fetch = FetchType.LAZY)
 	    @JoinColumn(name = "USERID", referencedColumnName = "USERID", nullable = false)
+	    @JsonIgnore
 	    private UserInfo user;
 
 		public UserAcc(LocalDateTime createdDateTime, String status, String accStatus,
