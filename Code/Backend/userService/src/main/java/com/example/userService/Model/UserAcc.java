@@ -2,13 +2,18 @@ package com.example.userService.Model;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Collection;
+import java.util.List;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import com.example.userService.Configuration.StringCryptoConverter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Entity
 @Table(name = "USER_ACC", schema = "SYSTEM")
-public class UserAcc {
+public class UserAcc implements UserDetails{
 	    @Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY) // works for Oracle 12c+ with IDENTITY
 	    @Column(name = "ACCOUNTID")
@@ -119,5 +124,47 @@ public class UserAcc {
 		public UserAcc() {
 			
 		}
+		/*
+		 * returns the user’s roles list; it is helpful to manage permissions.
+		 * */
+		@Override
+		public Collection<? extends GrantedAuthority> getAuthorities() {
+			// TODO Auto-generated method stub
+			return List.of();
+		}
+
+		@Override
+		public String getPassword() {
+			// TODO Auto-generated method stub
+			return userPassword;
+		}
+		/*
+		 * returns the email address because it is unique information about the user.
+		 * */
+		@Override
+		public String getUsername() {
+			// TODO Auto-generated method stub
+			return email;
+		}
+
+	    @Override
+	    public boolean isAccountNonExpired() {
+	        return true;
+	    }
+
+	    @Override
+	    public boolean isAccountNonLocked() {
+	        return true;
+	    }
+
+	    @Override
+	    public boolean isCredentialsNonExpired() {
+	        return true;
+	    }
+
+	    @Override
+	    public boolean isEnabled() {
+	        return true;
+	    }
 	    
 }
