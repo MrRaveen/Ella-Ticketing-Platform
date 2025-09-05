@@ -15,6 +15,8 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 
 public class createAccountRequest {
+	    @JsonProperty("verificationCode")
+	    private String verificationCode;
 	    @JsonProperty("fname")
 	    private String fname;
 	    @JsonProperty("lname")
@@ -37,6 +39,12 @@ public class createAccountRequest {
 	    private String email;
 	    @JsonProperty("userPassword")
 	    private String userPassword;
+		public String getVerificationCode() {
+			return verificationCode;
+		}
+		public void setVerificationCode(String verificationCode) {
+			this.verificationCode = verificationCode;
+		}
 		public String getFname() {
 			return fname;
 		}
@@ -103,9 +111,10 @@ public class createAccountRequest {
 		public void setUserPassword(String userPassword) {
 			this.userPassword = userPassword;
 		}
-		public createAccountRequest(String fname, String lname, String address, LocalDate dob, String provience,
+		public createAccountRequest(String verificationCode,String fname, String lname, String address, LocalDate dob, String provience,
 				String city, String nic, String contactNo, String streetName, String email, String userPassword) {
 			super();
+			this.verificationCode = verificationCode;
 			this.fname = fname;
 			this.lname = lname;
 			this.address = address;

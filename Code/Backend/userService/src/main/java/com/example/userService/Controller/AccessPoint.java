@@ -53,8 +53,8 @@ public class AccessPoint {
         		  LocalDateTime.now(), accountDetails.getEmail(), passwordEncoder.encode(accountDetails.getUserPassword()),userInfoObjInfo
         		  
         		  );
-            service.createProcess(accDetailsObjAcc, userInfoObjInfo);
-           return ResponseEntity.status(200).body("Data saved");
+           String result = service.createProcess(accDetailsObjAcc, userInfoObjInfo,accountDetails.getEmail(),accountDetails.getVerificationCode());
+           return ResponseEntity.status(200).body(result);
         } catch(Exception e) {
             e.printStackTrace();
             return ResponseEntity.status(500).body("Error: " + e.getMessage());
@@ -71,6 +71,15 @@ public class AccessPoint {
     		return ResponseEntity.status(500).body("Error occured in controller (AccessPoint) : " + e.toString());
     	}
     }
+    @GetMapping("/sendVerificationCode")
+    public ResponseEntity<?> verificationCodeProcess(@RequestParam String email) {
+    	try {
+			return ResponseEntity.status(200).body("Test out : " + service.sendVerificationMail(email));
+		} catch (Exception e) {
+			return ResponseEntity.status(500).body("Error occured in controller (AccessPoint) : " + e.toString());
+		}
+    }
+    
     //testing only
     @GetMapping("/getAllData")
     public List<UserAcc> getPrcess(){
