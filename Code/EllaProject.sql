@@ -7,7 +7,11 @@ OPEN user_cursor FOR
 SELECT * FROM USER_ACC WHERE EMAIL = mail;
 RETURN user_cursor;
 END;
+INSERT INTO roles (ACCESS_LEVEL, DESCRIPTION, ROLE_NAME) 
+VALUES ('FULL', 'Administrator access', 'ADMIN');
 
+INSERT INTO roles (ACCESS_LEVEL, DESCRIPTION, ROLE_NAME) 
+VALUES ('LIMITED', 'Employee access', 'EMPLOYEE');
 --call the function
 SET SERVEROUTPUT ON
 DECLARE

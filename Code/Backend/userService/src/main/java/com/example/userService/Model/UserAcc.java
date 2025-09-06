@@ -37,7 +37,6 @@ public class UserAcc implements UserDetails{
 	    @Column(name = "USER_PASSWORD", length = 800)
 	    @Convert(converter = StringCryptoConverter.class)
 	    private String userPassword;
-
 	    // Many accounts belong to one user
 	    @OneToOne(fetch = FetchType.LAZY)
 	    @JoinColumn(name = "USERID", referencedColumnName = "USERID", nullable = false)
