@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.4 Chrome/138.0.7204.97 Electron/37.2.1 Safari/537.36" version="28.0.4" pages="2">
   <diagram name="Page-1" id="S-loCbMiCD3eQ0C2EWXm">
-    <mxGraphModel dx="2184" dy="2498" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2371" dy="2613" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -355,7 +355,7 @@
         <mxCell id="0rw8UDTF2pYtxSH_e0a--1" value="Spring boot (REST API), spring security (JWT tokens), redis (caching), Bucket4J, Oracle SQL, Nginix" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="-450" y="-1115" width="340" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="LdmcDAW8UIcDraorrDWU-1" value="OAuth (Google), username &amp;amp; password, Role based access, &lt;u&gt;data encryption&lt;/u&gt;, &lt;u&gt;log writting&lt;/u&gt;, record user bahavior&lt;div&gt;usage recording, CORS &amp;amp; CSRF Security, &lt;strike&gt;API Keys&lt;/strike&gt;, TLS Security,&lt;/div&gt;&lt;div&gt;Data auditing,&lt;u&gt; Error handling, Rate limitting,&lt;/u&gt;&amp;nbsp;Zero-Trust Network Model,&amp;nbsp;Data Validation and Sanitization,Allow Listing,&amp;nbsp;Principle of Least Privilege:&amp;nbsp;Grant only the minimum permissions necessary for users and services to function,&lt;/div&gt;&lt;div&gt;Zero Trust Architecture, multi factor auth for high resk endpoints, run with HTTPS, &lt;u&gt;Grafna Lokki&lt;/u&gt;&lt;/div&gt;" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+        <mxCell id="LdmcDAW8UIcDraorrDWU-1" value="&lt;u&gt;username &amp;amp; password&lt;/u&gt;, Role based access, &lt;u&gt;data encryption&lt;/u&gt;, &lt;u&gt;log writting&lt;/u&gt;, record user bahavior&lt;div&gt;usage recording, CORS &amp;amp; CSRF Security, &lt;strike&gt;API Keys&lt;/strike&gt;, TLS Security,&lt;/div&gt;&lt;div&gt;Data auditing,&lt;u&gt; Error handling, Rate limitting,&lt;/u&gt;&amp;nbsp;Zero-Trust Network Model,&amp;nbsp;Data Validation and Sanitization,Allow Listing,&amp;nbsp;Principle of Least Privilege:&amp;nbsp;Grant only the minimum permissions necessary for users and services to function,&lt;/div&gt;&lt;div&gt;Zero Trust Architecture, multi factor auth for high resk endpoints, run with HTTPS, &lt;u&gt;Grafna Lokki&lt;/u&gt;&lt;/div&gt;" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="-440" y="-1315" width="320" height="180" as="geometry" />
         </mxCell>
         <mxCell id="LdmcDAW8UIcDraorrDWU-2" value="Frontend" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
@@ -1887,6 +1887,9 @@
         </mxCell>
         <mxCell id="9ZwIrSah5Z13GQweUu6j-1" value="&lt;a href=&quot;https://lk.lakpura.com/pages/train-routes&quot;&gt;Train Routes – Lakpura®&lt;/a&gt;&lt;div&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_railway_stations_in_Sri_Lanka_by_line&quot;&gt;List of railway stations in Sri Lanka by line - Wikipedia&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;https://www.railway.gov.lk/web/index.php?option=com_content&amp;amp;view=article&amp;amp;id=162&amp;amp;Itemid=186&amp;amp;lang=en&quot;&gt;Railway Network&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;https://www.railway.gov.lk/web/index.php?option=com_content&amp;amp;view=article&amp;amp;id=165&amp;amp;Itemid=191&amp;amp;lang=en&quot;&gt;Station Details&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="3680" y="150" width="280" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="j4-vTf93BbTMXJqvTAfO-1" value="Log as employee" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-350" y="-1860" width="110" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

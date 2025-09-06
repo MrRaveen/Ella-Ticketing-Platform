@@ -22,7 +22,6 @@ import com.example.userService.Response.LoginResponse;
 import com.example.userService.Service.CreateAccProcess;
 import com.example.userService.Service.JwtService;
 import com.example.userService.Service.LoginService;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 @RestController
@@ -79,7 +78,6 @@ public class AccessPoint {
 			return ResponseEntity.status(500).body("Error occured in controller (AccessPoint) : " + e.toString());
 		}
     }
-    
     //testing only
     @GetMapping("/getAllData")
     public List<UserAcc> getPrcess(){

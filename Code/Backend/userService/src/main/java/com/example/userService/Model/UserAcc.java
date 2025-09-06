@@ -32,7 +32,6 @@ public class UserAcc implements UserDetails{
 	    private LocalDateTime lastActiveTime;
 
 	    @Column(name = "EMAIL", length = 800)
-//	    @Convert(converter = StringCryptoConverter.class)
 	    private String email;
 	    
 	    @Column(name = "USER_PASSWORD", length = 800)
