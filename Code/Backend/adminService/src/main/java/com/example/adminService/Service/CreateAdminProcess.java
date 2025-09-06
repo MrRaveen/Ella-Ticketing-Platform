@@ -3,6 +3,7 @@ import java.time.LocalDate;
 
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.adminService.Entity.Admin;
@@ -17,13 +18,15 @@ public class CreateAdminProcess {
 	private AdminRepo adminRepo;
 	@Autowired
 	private AssignedRoleRepo assignedRoleRepo;
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 	public Boolean createProcess(AdminCreateAccReq accReq, Roles role) throws Exception {
 		LogObject obj = new LogObject(getClass());
 		Logger logObj = obj.getLogObj();
 		try {
 			LocalDate today = LocalDate.now();
 			//store encrypted data + encorded password
-			Admin newAdmin = new Admin(accReq.getUsername(),accReq.getPassword(),accReq.getFname(),accReq.getLname(),accReq.getContactNo(),accReq.getAddress(),today);
+			Admin newAdmin = new Admin(accReq.getUsername(),passwordEncoder.encode(accReq.getPassword()),accReq.getFname(),accReq.getLname(),accReq.getContactNo(),accReq.getAddress(),today);
 			Admin createdAdmin = adminRepo.save(newAdmin);
 			AssignedRoles newRole = new AssignedRoles(today, role, createdAdmin);
 			assignedRoleRepo.save(newRole);

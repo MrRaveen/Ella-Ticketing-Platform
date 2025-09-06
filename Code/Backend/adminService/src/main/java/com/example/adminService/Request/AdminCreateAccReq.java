@@ -16,7 +16,7 @@ import jakarta.persistence.Id;
 public class AdminCreateAccReq {
 	@JsonProperty("username")
     private String username;
-	@JsonProperty("passeord")
+	@JsonProperty("password")
     private String password;
 	@JsonProperty("fname")
     private String fname;
