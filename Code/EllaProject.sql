@@ -12,6 +12,7 @@ VALUES ('FULL', 'Administrator access', 'ADMIN');
 
 INSERT INTO roles (ACCESS_LEVEL, DESCRIPTION, ROLE_NAME) 
 VALUES ('LIMITED', 'Employee access', 'EMPLOYEE');
+SELECT *FROM ADMIN;
 --call the function
 SET SERVEROUTPUT ON
 DECLARE

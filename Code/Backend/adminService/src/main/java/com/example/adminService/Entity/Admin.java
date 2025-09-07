@@ -1,13 +1,17 @@
 package com.example.adminService.Entity;
 
+import java.security.PrivateKey;
+import java.security.PublicKey;
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.example.adminService.Configuration.StringCryptoConverter;
+import com.example.adminService.Service.AdminRBACImpl;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
@@ -16,6 +20,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "ADMIN")
@@ -102,11 +107,27 @@ public class Admin implements UserDetails{
 		this.joinedDate = joinedDate;
 	}
 	public Admin() {}
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
-		return List.of();
-	}
+//	@Override
+//	public Collection<? extends GrantedAuthority> getAuthorities() {
+//		AdminRBACImpl objAdminRBACImpl = new AdminRBACImpl();
+//		try {
+//			System.out.println("OUT : Passed");
+//			return objAdminRBACImpl.getRoles(this.username);
+//		} catch (Exception e) {
+//			return List.of();
+//		}
+//	}
+	    @Transient
+	    private Collection<? extends GrantedAuthority> authorities;
+	    
+	    public void setAuthorities(Collection<? extends GrantedAuthority> authorities) {
+	        this.authorities = authorities;
+	    }
+	    
+	    @Override
+	    public Collection<? extends GrantedAuthority> getAuthorities() {
+	        return this.authorities;
+	    }
 	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub

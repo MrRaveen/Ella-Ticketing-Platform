@@ -1,6 +1,7 @@
 package com.example.adminService.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,6 +13,7 @@ import com.example.adminService.Request.AdminCreateAccReq;
 import com.example.adminService.Request.AdminLoginRequest;
 import com.example.adminService.Response.LoginResAdmin;
 import com.example.adminService.Service.AdminLogin;
+import com.example.adminService.Service.AdminUserDetailsService;
 import com.example.adminService.Service.CreateAdminProcess;
 import com.example.adminService.Service.JwtService;
 @RestController
@@ -23,6 +25,8 @@ public class AccessPoint {
 	private AdminLogin adminLogin;
 	@Autowired
 	private JwtService jwtService;
+	@Autowired
+	private AdminUserDetailsService adminUserDetailsService;
 	@PostMapping("/CreateAdmin")
 	public ResponseEntity<?> createAdmin(@RequestBody AdminCreateAccReq requestAccReq) {
 		try {
@@ -36,7 +40,10 @@ public class AccessPoint {
 	public ResponseEntity<?> adminLogin(@RequestBody AdminLoginRequest request) {
 		try {
 			Admin admin = adminLogin.loginProcessAdmin(request.getUsername(), request.getPassword());
-			String tokenString = jwtService.generateToken(admin);
+			UserDetails adminRolAdmin = adminUserDetailsService.loadUserByUsername(admin.getUsername());
+			admin.setAuthorities(adminRolAdmin.getAuthorities());
+			//String tokenString = jwtService.generateToken(admin);
+			String tokenString = jwtService.generateTokenWithRoles(admin, admin.getAuthorities());
 			LoginResAdmin resAdmin = new LoginResAdmin(tokenString,jwtService.getExpirationTime());
 			return ResponseEntity.status(200).body(resAdmin);
 		} catch (Exception e) {
