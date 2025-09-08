@@ -107,23 +107,11 @@ public class Admin implements UserDetails{
 		this.joinedDate = joinedDate;
 	}
 	public Admin() {}
-//	@Override
-//	public Collection<? extends GrantedAuthority> getAuthorities() {
-//		AdminRBACImpl objAdminRBACImpl = new AdminRBACImpl();
-//		try {
-//			System.out.println("OUT : Passed");
-//			return objAdminRBACImpl.getRoles(this.username);
-//		} catch (Exception e) {
-//			return List.of();
-//		}
-//	}
-	    @Transient
+	    @Transient//does not add to persistance
 	    private Collection<? extends GrantedAuthority> authorities;
-	    
 	    public void setAuthorities(Collection<? extends GrantedAuthority> authorities) {
 	        this.authorities = authorities;
 	    }
-	    
 	    @Override
 	    public Collection<? extends GrantedAuthority> getAuthorities() {
 	        return this.authorities;

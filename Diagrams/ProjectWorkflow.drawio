@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.4 Chrome/138.0.7204.97 Electron/37.2.1 Safari/537.36" version="28.0.4" pages="2">
   <diagram name="Page-1" id="S-loCbMiCD3eQ0C2EWXm">
-    <mxGraphModel dx="2371" dy="2613" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="3153" dy="3095" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -355,7 +355,7 @@
         <mxCell id="0rw8UDTF2pYtxSH_e0a--1" value="Spring boot (REST API), spring security (JWT tokens), redis (caching), Bucket4J, Oracle SQL, Nginix" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="-450" y="-1115" width="340" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="LdmcDAW8UIcDraorrDWU-1" value="&lt;u&gt;username &amp;amp; password&lt;/u&gt;, Role based access, &lt;u&gt;data encryption&lt;/u&gt;, &lt;u&gt;log writting&lt;/u&gt;, record user bahavior&lt;div&gt;usage recording, CORS &amp;amp; CSRF Security, &lt;strike&gt;API Keys&lt;/strike&gt;, TLS Security,&lt;/div&gt;&lt;div&gt;Data auditing,&lt;u&gt; Error handling, Rate limitting,&lt;/u&gt;&amp;nbsp;Zero-Trust Network Model,&amp;nbsp;Data Validation and Sanitization,Allow Listing,&amp;nbsp;Principle of Least Privilege:&amp;nbsp;Grant only the minimum permissions necessary for users and services to function,&lt;/div&gt;&lt;div&gt;Zero Trust Architecture, multi factor auth for high resk endpoints, run with HTTPS, &lt;u&gt;Grafna Lokki&lt;/u&gt;&lt;/div&gt;" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+        <mxCell id="LdmcDAW8UIcDraorrDWU-1" value="&lt;u&gt;username &amp;amp; password&lt;/u&gt;, &lt;u&gt;Role based access&lt;/u&gt;, &lt;u&gt;data encryption&lt;/u&gt;, &lt;u&gt;log writting&lt;/u&gt;, record user bahavior&lt;div&gt;usage recording, CORS &amp;amp; CSRF Security, &lt;strike&gt;API Keys&lt;/strike&gt;, TLS Security,&lt;/div&gt;&lt;div&gt;Data auditing,&lt;u&gt; Error handling, Rate limitting,&lt;/u&gt;&amp;nbsp;Zero-Trust Network Model,&amp;nbsp;Data Validation and Sanitization,Allow Listing,&amp;nbsp;Principle of Least Privilege:&amp;nbsp;Grant only the minimum permissions necessary for users and services to function,&lt;/div&gt;&lt;div&gt;Zero Trust Architecture, multi factor auth for high resk endpoints, run with HTTPS, &lt;u&gt;Grafna Lokki&lt;/u&gt;&lt;/div&gt;" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="-440" y="-1315" width="320" height="180" as="geometry" />
         </mxCell>
         <mxCell id="LdmcDAW8UIcDraorrDWU-2" value="Frontend" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
@@ -779,7 +779,7 @@
         <mxCell id="22jXZ0G_j30wVZlFRnWj-2" value="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="Lno6rDM_qNSOGKfufWpZ-120" target="22jXZ0G_j30wVZlFRnWj-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="C2fayAyM_RdlwNSw2Ydt-167" value="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Lno6rDM_qNSOGKfufWpZ-120" edge="1">
+        <mxCell id="C2fayAyM_RdlwNSw2Ydt-167" value="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;startArrow=blockThin;startFill=1;" parent="1" source="Lno6rDM_qNSOGKfufWpZ-120" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1060" y="-410" as="targetPoint" />
             <Array as="points">
@@ -794,12 +794,6 @@
         </mxCell>
         <mxCell id="Lno6rDM_qNSOGKfufWpZ-121" value="adminID" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=4;" parent="1" vertex="1">
           <mxGeometry x="1760" y="-105" width="100" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="Lno6rDM_qNSOGKfufWpZ-122" value="username" style="ellipse;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
-          <mxGeometry x="1870" y="-135" width="100" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="Lno6rDM_qNSOGKfufWpZ-123" value="password" style="ellipse;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
-          <mxGeometry x="1990" y="-105" width="100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="Lno6rDM_qNSOGKfufWpZ-124" value="name" style="ellipse;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="2080" y="-65" width="100" height="40" as="geometry" />
@@ -859,18 +853,6 @@
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1700" y="165" as="sourcePoint" />
             <mxPoint x="1750" y="115" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="Lno6rDM_qNSOGKfufWpZ-137" value="" style="endArrow=none;html=1;rounded=0;" parent="1" source="Lno6rDM_qNSOGKfufWpZ-120" target="Lno6rDM_qNSOGKfufWpZ-122" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="1730" y="165" as="sourcePoint" />
-            <mxPoint x="1780" y="115" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="Lno6rDM_qNSOGKfufWpZ-138" value="" style="endArrow=none;html=1;rounded=0;" parent="1" source="Lno6rDM_qNSOGKfufWpZ-120" target="Lno6rDM_qNSOGKfufWpZ-123" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="1660" y="205" as="sourcePoint" />
-            <mxPoint x="1710" y="155" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Lno6rDM_qNSOGKfufWpZ-141" value="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="Lno6rDM_qNSOGKfufWpZ-139" target="Lno6rDM_qNSOGKfufWpZ-77" edge="1">
@@ -1216,16 +1198,6 @@
         <mxCell id="C2fayAyM_RdlwNSw2Ydt-43" value="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="C2fayAyM_RdlwNSw2Ydt-3" target="C2fayAyM_RdlwNSw2Ydt-42" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="C2fayAyM_RdlwNSw2Ydt-96" value="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="C2fayAyM_RdlwNSw2Ydt-3" target="C2fayAyM_RdlwNSw2Ydt-92" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2140" y="-1430" />
-              <mxPoint x="2140" y="-1390" />
-              <mxPoint x="2090" y="-1390" />
-              <mxPoint x="2090" y="-1342" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
         <mxCell id="C2fayAyM_RdlwNSw2Ydt-3" value="route (includes smaller routes)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="2160" y="-1450" width="100" height="40" as="geometry" />
         </mxCell>
@@ -1316,7 +1288,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="C2fayAyM_RdlwNSw2Ydt-26" value="classID" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=4;" parent="1" vertex="1">
-          <mxGeometry x="3700" y="-305" width="70" height="40" as="geometry" />
+          <mxGeometry x="3750" y="-345" width="70" height="40" as="geometry" />
         </mxCell>
         <mxCell id="C2fayAyM_RdlwNSw2Ydt-27" value="className" style="ellipse;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="3860" y="-320" width="100" height="40" as="geometry" />
@@ -1474,7 +1446,7 @@
             <mxPoint x="2230" y="-1320" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="C2fayAyM_RdlwNSw2Ydt-69" value="districtID" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=4;" parent="1" vertex="1">
+        <mxCell id="C2fayAyM_RdlwNSw2Ydt-69" value="locationID" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=4;" parent="1" vertex="1">
           <mxGeometry x="1990" y="-1890" width="100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="C2fayAyM_RdlwNSw2Ydt-70" value="districtName" style="ellipse;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
@@ -1543,12 +1515,6 @@
             <mxPoint x="2040" y="-1220" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="C2fayAyM_RdlwNSw2Ydt-95" value="M" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="C2fayAyM_RdlwNSw2Ydt-92" target="Lno6rDM_qNSOGKfufWpZ-156" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="C2fayAyM_RdlwNSw2Ydt-92" value="which route belongs" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
-          <mxGeometry x="1880" y="-1375" width="140" height="65" as="geometry" />
-        </mxCell>
         <mxCell id="C2fayAyM_RdlwNSw2Ydt-97" value="stationID" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=4;" parent="1" vertex="1">
           <mxGeometry x="1720.5" y="-1480" width="65" height="40" as="geometry" />
         </mxCell>
@@ -1586,7 +1552,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="C2fayAyM_RdlwNSw2Ydt-105" value="type (station master/normal)" style="ellipse;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
-          <mxGeometry x="1740" y="-200" width="100" height="40" as="geometry" />
+          <mxGeometry x="1910" y="-135" width="100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="C2fayAyM_RdlwNSw2Ydt-106" value="" style="endArrow=none;html=1;rounded=0;" parent="1" source="C2fayAyM_RdlwNSw2Ydt-105" target="Lno6rDM_qNSOGKfufWpZ-120" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -1809,7 +1775,7 @@
             <mxPoint x="1720" y="-870" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="C2fayAyM_RdlwNSw2Ydt-169" value="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="1" source="C2fayAyM_RdlwNSw2Ydt-168" target="Lno6rDM_qNSOGKfufWpZ-156" edge="1">
+        <mxCell id="C2fayAyM_RdlwNSw2Ydt-169" value="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=0;shape=wire;dashed=1;endArrow=none;endFill=0;" parent="1" source="C2fayAyM_RdlwNSw2Ydt-168" target="Lno6rDM_qNSOGKfufWpZ-156" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1710" y="-1400" as="targetPoint" />
             <Array as="points">
@@ -1888,7 +1854,7 @@
         <mxCell id="9ZwIrSah5Z13GQweUu6j-1" value="&lt;a href=&quot;https://lk.lakpura.com/pages/train-routes&quot;&gt;Train Routes – Lakpura®&lt;/a&gt;&lt;div&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_railway_stations_in_Sri_Lanka_by_line&quot;&gt;List of railway stations in Sri Lanka by line - Wikipedia&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;https://www.railway.gov.lk/web/index.php?option=com_content&amp;amp;view=article&amp;amp;id=162&amp;amp;Itemid=186&amp;amp;lang=en&quot;&gt;Railway Network&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;https://www.railway.gov.lk/web/index.php?option=com_content&amp;amp;view=article&amp;amp;id=165&amp;amp;Itemid=191&amp;amp;lang=en&quot;&gt;Station Details&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="3680" y="150" width="280" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="j4-vTf93BbTMXJqvTAfO-1" value="Log as employee" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+        <mxCell id="j4-vTf93BbTMXJqvTAfO-1" value="Log as employee" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="-350" y="-1860" width="110" height="40" as="geometry" />
         </mxCell>
       </root>

@@ -18,6 +18,7 @@ import com.example.adminService.Service.CreateAdminProcess;
 import com.example.adminService.Service.JwtService;
 @RestController
 @RequestMapping("/auth")
+//public access for all clients
 public class AccessPoint {
 	@Autowired
 	private CreateAdminProcess createAdminProcess;

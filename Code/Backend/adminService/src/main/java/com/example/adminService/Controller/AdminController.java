@@ -7,15 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/admin")
+//end points for the admin users only
 public class AdminController {
 	@GetMapping("test1")
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN')")
 	public String test() {
 		return "Only admin";
-	}
-	@GetMapping("test2")
-	@PreAuthorize("hasAnyRole('ROLE_EMPLOYEE')")
-	public String test2() {
-		return "Only employee";
 	}
 }

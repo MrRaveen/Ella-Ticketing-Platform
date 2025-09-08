@@ -23,31 +23,6 @@ public class AdminRBACImpl{
 	private AdminRepo adminRepo;
 	@Autowired
 	private AssignedRoleRepo assignedRoleRepo;
-//UserDetailsService
-//	@Override
-//	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-//		Admin admin = adminRepo.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("User not found with username: " + username));
-//		List<AssignedRoles> roles = assignedRoleRepo.findByAdmin(admin);
-//		Set<AssignedRoles>convertedSet = new HashSet<AssignedRoles>(roles);
-//		return new org.springframework.security.core.userdetails.User(
-//	            admin.getAdminUsername(), admin.getAdminPassword(), getAuthorities(convertedSet));
-//	}
-//	private Set<GrantedAuthority> getAuthorities(Set<AssignedRoles> roles) {
-//		return roles.stream()
-//				.map(role -> new SimpleGrantedAuthority("ROLE_"+role.getRole().getRoleName())).collect(Collectors.toSet());
-//    }
-	
-//	public Set<GrantedAuthority> getRoles(String username) throws Exception {
-//		try {
-//		     Admin admin = adminRepo.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("User not found with username: " + username));
-//			 List<AssignedRoles> roles = assignedRoleRepo.findByAdmin(admin);
-//			Set<AssignedRoles>convertedSet = new HashSet<AssignedRoles>(roles);
-//			return roles.stream()
-//					.map(role -> new SimpleGrantedAuthority("ROLE_"+role.getRole().getRoleName())).collect(Collectors.toSet());
-//		} catch (Exception e) {
-//			throw new Exception("Error occured in RBAC imple : " + e.toString());
-//		}
-//	}
 	 @Transactional(readOnly = true) // Add transactional annotation
 	    public Set<GrantedAuthority> getRoles(String username) throws Exception {
 	        try {
@@ -55,9 +30,6 @@ public class AdminRBACImpl{
 	                    .orElseThrow(() -> new UsernameNotFoundException("User not found with username: " + username));
 	            
 	            List<AssignedRoles> roles = assignedRoleRepo.findByAdmin(admin);
-	            roles.forEach(element_value -> {
-		            System.out.println("TEST : " + element_value.getRole().getRoleName());
-	            });
 	            return roles.stream()
 	                    .map(role -> new SimpleGrantedAuthority("ROLE_"+role.getRole().getRoleName()))
 	                    .collect(Collectors.toSet());
