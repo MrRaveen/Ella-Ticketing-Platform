@@ -31,4 +31,9 @@ END;
 SELECT * FROM USER_ACC WHERE EMAIL = 'qknX3Gn12zLPZcYPD6/on92+AD85wCLx4w6gvj6hcHY=';
 
 
+INSERT INTO TRAIN_CLASS (CLASS_LETTER, CLASS_NAME, DESCRIPTION) VALUES ('A', 'Freight Locomotive', 'Heavy-duty train for transporting goods');
+INSERT INTO TRAIN_CLASS (CLASS_LETTER, CLASS_NAME, DESCRIPTION) VALUES ('B', 'Passenger Train', 'Comfortable train for passenger transport');
+INSERT INTO TRAIN_CLASS (CLASS_LETTER, CLASS_NAME, DESCRIPTION) VALUES ('C', 'High-Speed Rail', 'Advanced train for rapid intercity travel');
+INSERT INTO TRAIN_CLASS (CLASS_LETTER, CLASS_NAME, DESCRIPTION) VALUES ('D', 'Cargo Wagon', 'Specialized wagon for bulk cargo');
+
 
