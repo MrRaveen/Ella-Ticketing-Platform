@@ -21,6 +21,7 @@ import com.example.adminService.Entity.Trains;
 import com.example.adminService.Entity.trainStats;
 import com.example.adminService.Repository.AdminRepo;
 import com.example.adminService.Request.AddTrainInfoRequest;
+import com.example.adminService.Request.CreatePlatformRequest;
 import com.example.adminService.Request.CreateStationRequest;
 import com.example.adminService.Request.CreateTrainRequest;
 import com.example.adminService.Request.UpdateStationByID;
@@ -100,6 +101,7 @@ public class AdminController {
 			return ResponseEntity.status(500).body("Station removed");	
 		}
 	}
+	//create trains
 	@PostMapping("/createTrains")
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN')")
 	public ResponseEntity<?> CreateTrains(@RequestBody CreateTrainRequest createTrainRequest){
@@ -113,7 +115,33 @@ public class AdminController {
 			return ResponseEntity.status(500).body("Error occured :" + e.toString());	
 		}
 	}
-	
+	//create platform
+	@PostMapping("/createPlatform")
+	@PreAuthorize("hasAnyRole('ROLE_ADMIN')")
+	public ResponseEntity<?>createPlatform(@RequestBody CreatePlatformRequest createPlatformRequest){
+		try {
+			boolean result = createTrainService.createPlatformProcess(createPlatformRequest);
+			return ResponseEntity.status(200).body("Data saved : " + result);	
+		}catch (NoSuchElementException e) {
+			return ResponseEntity.status(500).body("Some values are empty :" + e.toString());	
+		}
+		catch (Exception e) {
+			return ResponseEntity.status(500).body("Error occured :" + e.toString());	
+		}
+	}
+	//create routes
+	@PostMapping("/createRoute")
+	@PreAuthorize("hasAnyRole('ROLE_ADMIN')")
+	public ResponseEntity<?>createRoute(){
+		try {
+			return ResponseEntity.status(200).body("Data saved : ");
+		}catch (NoSuchElementException e) {
+			return ResponseEntity.status(500).body("Some values are empty :" + e.toString());	
+		}
+		catch (Exception e) {
+			return ResponseEntity.status(500).body("Error occured :" + e.toString());	
+		}
+	}
 	@GetMapping("test1")
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN')")
 	public String test() {

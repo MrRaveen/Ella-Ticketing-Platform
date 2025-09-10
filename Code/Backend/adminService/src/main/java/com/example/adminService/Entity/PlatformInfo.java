@@ -13,10 +13,6 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "PLATFORM_INFO")
 public class PlatformInfo {
-	public enum platformStatus{
-		ACTIVE,
-		INACTIVE
-	}
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "PLATFORM_ID")
@@ -24,7 +20,7 @@ public class PlatformInfo {
 	@Column(name = "PLATFORM_NO")
 	private int platforNo;
 	@Column(name = "STATUS")
-	private platformStatus status;
+	private String status;
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "STATION_ID", referencedColumnName = "STATION_ID", nullable = false)
 	private Stations trainClass;
@@ -40,19 +36,20 @@ public class PlatformInfo {
 	public void setPlatforNo(int platforNo) {
 		this.platforNo = platforNo;
 	}
-	public platformStatus getStatus() {
-		return status;
-	}
-	public void setStatus(platformStatus status) {
-		this.status = status;
-	}
 	public Stations getTrainClass() {
 		return trainClass;
 	}
 	public void setTrainClass(Stations trainClass) {
 		this.trainClass = trainClass;
 	}
-	public PlatformInfo(int platforNo, platformStatus status, Stations trainClass) {
+	
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public PlatformInfo(int platforNo, String status, Stations trainClass) {
 		super();
 		this.platforNo = platforNo;
 		this.status = status;

@@ -8,13 +8,16 @@ import org.springframework.core.style.ToStringCreator;
 import org.springframework.stereotype.Service;
 
 import com.example.adminService.Entity.Admin;
+import com.example.adminService.Entity.PlatformInfo;
 import com.example.adminService.Entity.Stations;
 import com.example.adminService.Entity.TrainInfo;
 import com.example.adminService.Entity.Trains;
 import com.example.adminService.Repository.AdminRepo;
+import com.example.adminService.Repository.PlatformRepo;
 import com.example.adminService.Repository.StationRepo;
 import com.example.adminService.Repository.TrainInfoRepo;
 import com.example.adminService.Repository.TrainsRepo;
+import com.example.adminService.Request.CreatePlatformRequest;
 import com.example.adminService.Request.CreateTrainRequest;
 
 @Service
@@ -27,6 +30,8 @@ public class CreateTrainService {
 	private TrainsRepo trainsRepo;
 	@Autowired
 	private AdminRepo adminRepo;
+	@Autowired
+	private PlatformRepo platformRepo;
 	public boolean createTrainInfoProcess(TrainInfo trainInfo) throws Exception {
 		try {
 			trainInfoRepo.save(trainInfo);
@@ -102,6 +107,28 @@ public class CreateTrainService {
 				return true;
 			}else {
 				return false;
+			}
+		} catch (Exception e) {
+			throw new Exception("Error occured (CreateTrainService : createTrainProcess) : " + e.toString());
+		}
+	}
+	public boolean createPlatformProcess(CreatePlatformRequest createPlatformRequest) throws Exception {
+		try {
+			Stations stations = stationRepo.findById(createPlatformRequest.getStationID()).
+					orElseThrow();
+			PlatformInfo newPlatformInfo = new PlatformInfo(createPlatformRequest.getPlatformNum(), null, stations);
+			if(createPlatformRequest.getStatuString().equals("ACTIVE")) {
+				newPlatformInfo.setStatus("ACTIVE");
+			}else if (createPlatformRequest.getStatuString().equals("INACTIVE")) {
+				newPlatformInfo.setStatus("INACTIVE");
+			}else {
+				newPlatformInfo.setStatus("ACTIVE");
+			}
+			PlatformInfo createdPlatformInfo = platformRepo.save(newPlatformInfo);
+			if(createdPlatformInfo == null) {
+				return false;
+			}else {
+				return true;
 			}
 		} catch (Exception e) {
 			throw new Exception("Error occured (CreateTrainService : createTrainProcess) : " + e.toString());
