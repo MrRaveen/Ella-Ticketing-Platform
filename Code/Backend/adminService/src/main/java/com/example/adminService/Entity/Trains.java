@@ -27,19 +27,19 @@ public class Trains {
     @JoinColumn(name = "TRAIN_ID", referencedColumnName = "TRAIN_ID", nullable = false)
     private TrainInfo trainInfo;
 	@OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "EMPLOYEE_ID", nullable = false)
-    private NormalEmployee emIDEmployee;
+    @JoinColumn(name = "ADMIN_ID", referencedColumnName = "ADMIN_ID", nullable = false)
+    private Admin admin;
 	@OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "STATION_ID", referencedColumnName = "STATION_ID", nullable = false)
     private Stations stations;
 	public Trains(String driverNameString, boolean status, String trainNameString, TrainInfo trainInfo,
-			NormalEmployee emIDEmployee, Stations stations) {
+			Admin admin, Stations stations) {
 		super();
 		this.driverNameString = driverNameString;
 		this.status = status;
 		this.trainNameString = trainNameString;
 		this.trainInfo = trainInfo;
-		this.emIDEmployee = emIDEmployee;
+		this.admin = admin;
 		this.stations = stations;
 	}
 	public int getTrainID() {
@@ -72,11 +72,11 @@ public class Trains {
 	public void setTrainInfo(TrainInfo trainInfo) {
 		this.trainInfo = trainInfo;
 	}
-	public NormalEmployee getEmIDEmployee() {
-		return emIDEmployee;
+	public Admin getEmIDEmployee() {
+		return admin;
 	}
-	public void setEmIDEmployee(NormalEmployee emIDEmployee) {
-		this.emIDEmployee = emIDEmployee;
+	public void setEmIDEmployee(Admin admin) {
+		this.admin = admin;
 	}
 	public Stations getStations() {
 		return stations;

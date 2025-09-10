@@ -1,5 +1,7 @@
 package com.example.adminService.Controller;
 
+import java.util.NoSuchElementException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -12,11 +14,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.adminService.Entity.Admin;
 import com.example.adminService.Entity.Stations;
 import com.example.adminService.Entity.TrainInfo;
+import com.example.adminService.Entity.Trains;
 import com.example.adminService.Entity.trainStats;
+import com.example.adminService.Repository.AdminRepo;
 import com.example.adminService.Request.AddTrainInfoRequest;
 import com.example.adminService.Request.CreateStationRequest;
+import com.example.adminService.Request.CreateTrainRequest;
 import com.example.adminService.Request.UpdateStationByID;
 import com.example.adminService.Service.CreateTrainService;
 
@@ -26,6 +32,8 @@ import com.example.adminService.Service.CreateTrainService;
 public class AdminController {
 	@Autowired
 	private CreateTrainService createTrainService;
+	@Autowired
+	private AdminRepo adminRepo;
 	@PostMapping("/addTrainInfo")
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN')")
 	public ResponseEntity<?> addTrainInfo(@RequestBody AddTrainInfoRequest addTrainInfoRequest){
@@ -92,6 +100,20 @@ public class AdminController {
 			return ResponseEntity.status(500).body("Station removed");	
 		}
 	}
+	@PostMapping("/createTrains")
+	@PreAuthorize("hasAnyRole('ROLE_ADMIN')")
+	public ResponseEntity<?> CreateTrains(@RequestBody CreateTrainRequest createTrainRequest){
+		try {
+			boolean result = createTrainService.createTrainProcess(createTrainRequest);
+			return ResponseEntity.status(200).body("Train created : " + result);	
+		}catch (NoSuchElementException e) {
+			return ResponseEntity.status(500).body("Some values are empty :" + e.toString());	
+		} 
+		catch (Exception e) {
+			return ResponseEntity.status(500).body("Error occured :" + e.toString());	
+		}
+	}
+	
 	@GetMapping("test1")
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN')")
 	public String test() {

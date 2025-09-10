@@ -7,10 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.style.ToStringCreator;
 import org.springframework.stereotype.Service;
 
+import com.example.adminService.Entity.Admin;
 import com.example.adminService.Entity.Stations;
 import com.example.adminService.Entity.TrainInfo;
+import com.example.adminService.Entity.Trains;
+import com.example.adminService.Repository.AdminRepo;
 import com.example.adminService.Repository.StationRepo;
 import com.example.adminService.Repository.TrainInfoRepo;
+import com.example.adminService.Repository.TrainsRepo;
+import com.example.adminService.Request.CreateTrainRequest;
 
 @Service
 public class CreateTrainService {
@@ -18,6 +23,10 @@ public class CreateTrainService {
 	private TrainInfoRepo trainInfoRepo;
 	@Autowired
 	private StationRepo stationRepo;
+	@Autowired
+	private TrainsRepo trainsRepo;
+	@Autowired
+	private AdminRepo adminRepo;
 	public boolean createTrainInfoProcess(TrainInfo trainInfo) throws Exception {
 		try {
 			trainInfoRepo.save(trainInfo);
@@ -77,6 +86,25 @@ public class CreateTrainService {
 			return allStationsList;
 		} catch (Exception e) {
 			throw new Exception("Error occured (CreateTrainService : getAllStations) : " + e.toString());
+		}
+	}
+	public boolean createTrainProcess(CreateTrainRequest createTrainRequest) throws Exception {
+		try {
+			Admin currentAdmin = adminRepo.findByUsername(createTrainRequest.getAdminUsername())
+					.orElseThrow();
+			Stations stations = stationRepo.findById(createTrainRequest.getStationsID())
+					.orElseThrow();
+			TrainInfo trainInfo = trainInfoRepo.findById(createTrainRequest.getTrainInfoID())
+					.orElseThrow();
+			Trains newTrains = new Trains(createTrainRequest.getDriverName(), true, createTrainRequest.getTrainName(), trainInfo, currentAdmin, stations);
+			Trains createdTrains = trainsRepo.save(newTrains);
+			if(createdTrains != null) {
+				return true;
+			}else {
+				return false;
+			}
+		} catch (Exception e) {
+			throw new Exception("Error occured (CreateTrainService : createTrainProcess) : " + e.toString());
 		}
 	}
 }

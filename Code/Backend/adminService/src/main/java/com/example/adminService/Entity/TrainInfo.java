@@ -1,5 +1,7 @@
 package com.example.adminService.Entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -18,39 +20,48 @@ public class TrainInfo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "TRAIN_ID")
+	@JsonProperty("trainId")
     private int trainId;
 
     @Column(name = "NAME")
+    @JsonProperty("name")
     private String name;
 
     @Column(name = "REPORTING_NO")
+    @JsonProperty("reportingNo")
     private String reportingNo;
 
     @Column(name = "ENGINE_CODE")
+    @JsonProperty("engineCode")
     private String engineCode;
 
     @Column(name = "SERVICE_STARTED_YEAR")
+    @JsonProperty("serviceStartedYear")
     private Integer serviceStartedYear;
 
     @Column(name = "MANUFACTURED_YEAR")
+    @JsonProperty("manufacturedYear")
     private Integer manufacturedYear;
 
     @Column(name = "AVG_SPEED")
+    @JsonProperty("avgSpeed")
     private Double avgSpeed;
 
     @Column(name = "TOT_OPERATION_H")
+    @JsonProperty("totOperationHours")
     private Double totOperationHours;
 
     @Column(name = "ACCIDENT_COUNT")
+    @JsonProperty("accidentsCount")
     private Integer accidentsCount;
 
     @Column(name = "TRAIN_STAT")
+    @JsonProperty("trainStatus")
     private trainStats trainStatus;
-    
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CALSS_ID", referencedColumnName = "CLASS_ID", nullable = false)
+    @JsonProperty("trainClass")
     private TrainClass trainClass;
-
 	public int getTrainId() {
 		return trainId;
 	}

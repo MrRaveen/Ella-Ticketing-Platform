@@ -1,5 +1,7 @@
 package com.example.adminService.Entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,19 +14,26 @@ import jakarta.persistence.Table;
 public class Stations {
 	    @Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    @JsonProperty("stationID")
 	    @Column(name = "STATION_ID")
 	    private int stationID;
 	    @Column(name = "CONTACT_NO")
+	    @JsonProperty("contactNoString")
 	    private String contactNoString;
 	    @Column(name = "DISTANCE_FROM_FORT")
+	    @JsonProperty("distanceFromFort")
 	    private double distanceFromFort;
 	    @Column(name = "ELEVATION")
+	    @JsonProperty("elevation")
 	    private double elevation;
 	    @Column(name = "STATION_CODE")
+	    @JsonProperty("stationCodeString")
 	    private String stationCodeString;
 	    @Column(name = "STATION_NAME")
+	    @JsonProperty("stationNameString")
 	    private String stationNameString;
 	    @Column(name = "STATUS")
+	    @JsonProperty("stationStatus")
 	    private String stationStatus;
 		public int getStationID() {
 			return stationID;
