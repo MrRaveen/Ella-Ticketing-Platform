@@ -2,10 +2,13 @@ package com.example.adminService.Entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -27,14 +30,16 @@ public class Route {
 	    @Column(name = "ROUTE_CODE")
 	    private String routeCode;
 
-	    @Column(name = "START_STATION")
-	    private String startStation;
+	    @OneToOne(fetch = FetchType.LAZY)
+		@JoinColumn(name = "END_STATION_ID", referencedColumnName = "STATION_ID", nullable = false)
+	    private Stations startStation;
 
-	    @Column(name = "ENDING_STATION")
-	    private String endingStation;
+	    @OneToOne(fetch = FetchType.LAZY)
+		@JoinColumn(name = "START_STATION_ID", referencedColumnName = "STATION_ID", nullable = false)
+	    private Stations endingStation;
 
 	    @Column(name = "ROUTE_STATUS")
-	    private routeStatus routeStatus;
+	    private String routeStatus;
 
 		public int getRouteId() {
 			return routeId;
@@ -60,32 +65,32 @@ public class Route {
 			this.routeCode = routeCode;
 		}
 
-		public String getStartStation() {
+		public Stations getStartStation() {
 			return startStation;
 		}
 
-		public void setStartStation(String startStation) {
+		public void setStartStation(Stations startStation) {
 			this.startStation = startStation;
 		}
 
-		public String getEndingStation() {
+		public Stations getEndingStation() {
 			return endingStation;
 		}
 
-		public void setEndingStation(String endingStation) {
+		public void setEndingStation(Stations endingStation) {
 			this.endingStation = endingStation;
 		}
 
-		public routeStatus getRouteStatus() {
+		public String getRouteStatus() {
 			return routeStatus;
 		}
 
-		public void setRouteStatus(routeStatus routeStatus) {
+		public void setRouteStatus(String routeStatus) {
 			this.routeStatus = routeStatus;
 		}
 
-		public Route(String routeName, String routeCode, String startStation, String endingStation,
-				com.example.adminService.Entity.Route.routeStatus routeStatus) {
+		public Route(String routeName, String routeCode, Stations startStation, Stations endingStation,
+				String routeStatus) {
 			super();
 			this.routeName = routeName;
 			this.routeCode = routeCode;

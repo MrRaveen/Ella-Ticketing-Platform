@@ -36,3 +36,7 @@ INSERT INTO TRAIN_CLASS (CLASS_LETTER, CLASS_NAME, DESCRIPTION) VALUES ('A', 'Fr
 INSERT INTO TRAIN_CLASS (CLASS_LETTER, CLASS_NAME, DESCRIPTION) VALUES ('B', 'Passenger Train', 'Comfortable train for passenger transport');
 INSERT INTO TRAIN_CLASS (CLASS_LETTER, CLASS_NAME, DESCRIPTION) VALUES ('C', 'High-Speed Rail', 'Advanced train for rapid intercity travel');
 INSERT INTO TRAIN_CLASS (CLASS_LETTER, CLASS_NAME, DESCRIPTION) VALUES ('D', 'Cargo Wagon', 'Specialized wagon for bulk cargo');
+
+SELECT column_name 
+FROM all_cons_columns 
+WHERE constraint_name = 'UKNAU6BE5E8NTEMRJWWM74QR7FE' AND owner = 'SYSTEM';

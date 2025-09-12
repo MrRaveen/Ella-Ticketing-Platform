@@ -22,9 +22,11 @@ import com.example.adminService.Entity.trainStats;
 import com.example.adminService.Repository.AdminRepo;
 import com.example.adminService.Request.AddTrainInfoRequest;
 import com.example.adminService.Request.CreatePlatformRequest;
+import com.example.adminService.Request.CreateRouteRequest;
 import com.example.adminService.Request.CreateStationRequest;
 import com.example.adminService.Request.CreateTrainRequest;
 import com.example.adminService.Request.UpdateStationByID;
+import com.example.adminService.Service.CreateRouteProcess;
 import com.example.adminService.Service.CreateTrainService;
 
 @RestController
@@ -35,6 +37,8 @@ public class AdminController {
 	private CreateTrainService createTrainService;
 	@Autowired
 	private AdminRepo adminRepo;
+	@Autowired
+	private CreateRouteProcess createRouteProcess;
 	@PostMapping("/addTrainInfo")
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN')")
 	public ResponseEntity<?> addTrainInfo(@RequestBody AddTrainInfoRequest addTrainInfoRequest){
@@ -132,9 +136,10 @@ public class AdminController {
 	//create routes
 	@PostMapping("/createRoute")
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN')")
-	public ResponseEntity<?>createRoute(){
+	public ResponseEntity<?>createRoute(@RequestBody CreateRouteRequest createRouteRequest){
 		try {
-			return ResponseEntity.status(200).body("Data saved : ");
+			boolean saveResult = createRouteProcess.createRouteProcess(createRouteRequest);
+			return ResponseEntity.status(200).body("Data saved : " + saveResult);
 		}catch (NoSuchElementException e) {
 			return ResponseEntity.status(500).body("Some values are empty :" + e.toString());	
 		}
