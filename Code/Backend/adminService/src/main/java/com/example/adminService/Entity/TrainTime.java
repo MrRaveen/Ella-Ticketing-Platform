@@ -6,23 +6,20 @@ import java.time.LocalTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "TRAIN_TIME")
 public class TrainTime {
-	public enum trainTimeStatus{
-		CANCELLED,
-		ACTIVE,
-		COMPLETED,
-		STOPED
-	}
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "TIME_ID")
@@ -31,19 +28,35 @@ public class TrainTime {
 	private LocalTime deparTime;
 	@Column(name = "DATE_OF_TRAIN")
 	private LocalDate dateOfTrain;
+	@Column(name = "ARRIVAL_DATE_OF_TRAIN")
+	private LocalDate arrivalDateOfTrain;
 	@Column(name = "ARRIVAL_TIME")
 	private LocalTime arrivaLocalTime;
+	@Enumerated(EnumType.STRING)
 	@Column(name = "STATUS")
 	private trainTimeStatus status;
-	@OneToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ROUTE_ID", referencedColumnName = "ROUTE_ID", nullable = false)
     private Route route;
-	@OneToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "TRAIN_ID", referencedColumnName = "TRAIN_ID", nullable = false)
     private Trains trains;
-	@OneToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PLATFORM_ID", referencedColumnName = "PLATFORM_ID", nullable = false)
     private PlatformInfo platformInfo;
+	
+	public LocalDate getDateOfTrain() {
+		return dateOfTrain;
+	}
+	public void setDateOfTrain(LocalDate dateOfTrain) {
+		this.dateOfTrain = dateOfTrain;
+	}
+	public LocalDate getArrivalDateOfTrain() {
+		return arrivalDateOfTrain;
+	}
+	public void setArrivalDateOfTrain(LocalDate arrivalDateOfTrain) {
+		this.arrivalDateOfTrain = arrivalDateOfTrain;
+	}
 	public int getTimeID() {
 		return timeID;
 	}
@@ -92,11 +105,13 @@ public class TrainTime {
 	public void setPlatformInfo(PlatformInfo platformInfo) {
 		this.platformInfo = platformInfo;
 	}
-	public TrainTime(LocalTime deparTime, LocalDate dateOfTrain, LocalTime arrivaLocalTime, trainTimeStatus status,
-			Route route, Trains trains, PlatformInfo platformInfo) {
+	
+	public TrainTime(LocalTime deparTime, LocalDate dateOfTrain, LocalDate arrivalDateOfTrain,
+			LocalTime arrivaLocalTime, trainTimeStatus status, Route route, Trains trains, PlatformInfo platformInfo) {
 		super();
 		this.deparTime = deparTime;
 		this.dateOfTrain = dateOfTrain;
+		this.arrivalDateOfTrain = arrivalDateOfTrain;
 		this.arrivaLocalTime = arrivaLocalTime;
 		this.status = status;
 		this.route = route;

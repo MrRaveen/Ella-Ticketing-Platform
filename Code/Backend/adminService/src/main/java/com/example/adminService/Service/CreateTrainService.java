@@ -19,6 +19,7 @@ import com.example.adminService.Repository.TrainInfoRepo;
 import com.example.adminService.Repository.TrainsRepo;
 import com.example.adminService.Request.CreatePlatformRequest;
 import com.example.adminService.Request.CreateTrainRequest;
+import com.example.adminService.Request.UpdateTrainsByIDRequest;
 
 @Service
 public class CreateTrainService {
@@ -130,6 +131,25 @@ public class CreateTrainService {
 			}else {
 				return true;
 			}
+		} catch (Exception e) {
+			throw new Exception("Error occured (CreateTrainService : createTrainProcess) : " + e.toString());
+		}
+	}
+	public boolean updateTrainsByID(UpdateTrainsByIDRequest updateTrainsByIDRequest) throws Exception {
+		try {
+			Trains foundTrains = trainsRepo.findById(updateTrainsByIDRequest.getTrainID())
+					.orElseThrow();
+			Stations foundStations = stationRepo.findById(updateTrainsByIDRequest.getStationsID())
+					.orElseThrow();
+			TrainInfo foundTrainInfo = trainInfoRepo.findById(updateTrainsByIDRequest.getTrainInfoID())
+					.orElseThrow();
+			foundTrains.setDriverNameString(updateTrainsByIDRequest.getDriverName());
+			foundTrains.setStatus(updateTrainsByIDRequest.isStatus());
+			foundTrains.setTrainNameString(updateTrainsByIDRequest.getTrainName());
+			foundTrains.setStations(foundStations);
+			foundTrains.setTrainInfo(foundTrainInfo);
+			trainsRepo.save(foundTrains);
+			return true;
 		} catch (Exception e) {
 			throw new Exception("Error occured (CreateTrainService : createTrainProcess) : " + e.toString());
 		}

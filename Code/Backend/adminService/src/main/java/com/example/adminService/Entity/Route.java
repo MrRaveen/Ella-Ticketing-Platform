@@ -43,6 +43,9 @@ public class Route {
 	    @OneToMany(mappedBy = "route")
 	    private Set<RouteLocations> routeLocations;
 	    
+	    @OneToMany(mappedBy = "route")
+	    private Set<TrainTime> trainTimes;
+	    
 	    @Column(name = "ROUTE_STATUS")
 	    private String routeStatus;
 

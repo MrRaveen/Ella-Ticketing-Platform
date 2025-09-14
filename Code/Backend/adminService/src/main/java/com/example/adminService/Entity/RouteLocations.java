@@ -33,6 +33,7 @@ public class RouteLocations {
 	 @ManyToOne(fetch = FetchType.LAZY)
 	 @JoinColumn(name = "STATION_ID", referencedColumnName = "STATION_ID", nullable = false)
 	 private Stations stations;
+	 
 	 public int getLocationID() {
 		 return locationID;
 	 }

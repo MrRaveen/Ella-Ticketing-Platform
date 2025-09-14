@@ -25,9 +25,12 @@ import com.example.adminService.Request.CreatePlatformRequest;
 import com.example.adminService.Request.CreateRouteRequest;
 import com.example.adminService.Request.CreateStationRequest;
 import com.example.adminService.Request.CreateTrainRequest;
+import com.example.adminService.Request.CreateTrainTimeRequest;
 import com.example.adminService.Request.UpdateStationByID;
+import com.example.adminService.Request.UpdateTrainsByIDRequest;
 import com.example.adminService.Service.CreateRouteProcess;
 import com.example.adminService.Service.CreateTrainService;
+import com.example.adminService.Service.CreateTrainTimeService;
 
 @RestController
 @RequestMapping("/admin")
@@ -37,6 +40,8 @@ public class AdminController {
 	private CreateTrainService createTrainService;
 	@Autowired
 	private AdminRepo adminRepo;
+	@Autowired
+	private CreateTrainTimeService createTrainTimeService;
 	@Autowired
 	private CreateRouteProcess createRouteProcess;
 	@PostMapping("/addTrainInfo")
@@ -119,6 +124,19 @@ public class AdminController {
 			return ResponseEntity.status(500).body("Error occured :" + e.toString());	
 		}
 	}
+	//update trains
+	@PutMapping("/updateTrains")
+	@PreAuthorize("hasAnyRole('ROLE_ADMIN')")
+	public ResponseEntity<?> UpdateTrainsByID(@RequestBody UpdateTrainsByIDRequest updateTrainsByIDRequest){
+		try {
+			return ResponseEntity.status(200).body("Train created : " + createTrainService.updateTrainsByID(updateTrainsByIDRequest));	
+		}catch (NoSuchElementException e) {
+			return ResponseEntity.status(500).body("Some values are empty :" + e.toString());	
+		} 
+		catch (Exception e) {
+			return ResponseEntity.status(500).body("Error occured :" + e.toString());	
+		}
+	}
 	//create platform
 	@PostMapping("/createPlatform")
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN')")
@@ -140,6 +158,20 @@ public class AdminController {
 		try {
 			boolean saveResult = createRouteProcess.createRouteProcess(createRouteRequest);
 			return ResponseEntity.status(200).body("Data saved : " + saveResult);
+		}catch (NoSuchElementException e) {
+			return ResponseEntity.status(500).body("Some values are empty :" + e.toString());	
+		}
+		catch (Exception e) {
+			return ResponseEntity.status(500).body("Error occured :" + e.toString());	
+		}
+	}
+	//create train time
+	@PostMapping("/createTrainTime")
+	@PreAuthorize("hasAnyRole('ROLE_ADMIN')")
+	public ResponseEntity<?>createTrainTime(@RequestBody CreateTrainTimeRequest createTrainTimeRequest){
+		try {
+			boolean trainTimeSaveResult = createTrainTimeService.createTrainTimeProcess(createTrainTimeRequest);
+			return ResponseEntity.status(200).body("Data saved : ");
 		}catch (NoSuchElementException e) {
 			return ResponseEntity.status(500).body("Some values are empty :" + e.toString());	
 		}

@@ -1,5 +1,7 @@
 package com.example.adminService.Entity;
 
+import java.util.Set;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -7,6 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -24,6 +27,8 @@ public class PlatformInfo {
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "STATION_ID", referencedColumnName = "STATION_ID", nullable = false)
 	private Stations trainClass;
+	@OneToMany(mappedBy = "platformInfo")
+    private Set<TrainTime> trainTimes;
 	public int getPlatformID() {
 		return platformID;
 	}
