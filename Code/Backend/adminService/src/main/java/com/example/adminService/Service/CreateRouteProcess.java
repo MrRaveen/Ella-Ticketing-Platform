@@ -31,7 +31,10 @@ public class CreateRouteProcess {
 			List<RouteLocationRequest> allRouteLocations = createRouteRequest.getAllRouteLocations();
 			allRouteLocations.forEach(routeLocation->{
 				Stations station = stationRepo.findById(routeLocation.getStationID()).get();
-				RouteLocations newRouteLocation = new RouteLocations(routeLocation.getDistrictName(), routeLocation.getLocationName(), routeLocation.getProvince(), createdRoute, station);
+				RouteLocations newRouteLocation = new RouteLocations(routeLocation.getDistrictName(), 
+						routeLocation.getLocationName(),
+						routeLocation.getProvince(), 
+						createdRoute, station);
 			    routeLocationsRepo.save(newRouteLocation);
 			});
 			return true;

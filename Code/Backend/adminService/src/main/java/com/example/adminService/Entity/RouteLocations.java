@@ -7,6 +7,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -23,10 +25,12 @@ public class RouteLocations {
 	 private String locationNameString;
 	 @Column(name = "PROVINCE")
 	 private String provinceString;
-	 @OneToOne(fetch = FetchType.LAZY)
+	 
+	 @ManyToOne(fetch = FetchType.LAZY)
 	 @JoinColumn(name = "ROUTE_ID", referencedColumnName = "ROUTE_ID", nullable = false)
 	 private Route route;
-	 @OneToOne(fetch = FetchType.LAZY)
+	 
+	 @ManyToOne(fetch = FetchType.LAZY)
 	 @JoinColumn(name = "STATION_ID", referencedColumnName = "STATION_ID", nullable = false)
 	 private Stations stations;
 	 public int getLocationID() {

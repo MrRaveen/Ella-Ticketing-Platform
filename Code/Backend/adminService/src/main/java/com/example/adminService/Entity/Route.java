@@ -1,5 +1,7 @@
 package com.example.adminService.Entity;
 
+import java.util.Set;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -37,7 +39,10 @@ public class Route {
 	    @OneToOne(fetch = FetchType.LAZY)
 		@JoinColumn(name = "START_STATION_ID", referencedColumnName = "STATION_ID", nullable = false)
 	    private Stations endingStation;
-
+	    
+	    @OneToMany(mappedBy = "route")
+	    private Set<RouteLocations> routeLocations;
+	    
 	    @Column(name = "ROUTE_STATUS")
 	    private String routeStatus;
 
@@ -101,6 +106,14 @@ public class Route {
 
 		public Route() {
 			super();
+		}
+
+		public Set<RouteLocations> getRouteLocations() {
+			return routeLocations;
+		}
+
+		public void setRouteLocations(Set<RouteLocations> routeLocations) {
+			this.routeLocations = routeLocations;
 		}
 	    
 }
