@@ -34,7 +34,6 @@ public class CreateAccProcess {
     @Autowired
     private VerificationStoreRepo repo;
     private LogObject obj1 = new LogObject(CreateAccProcess.class);//logger class
-    private Logger logObj = null;
     public Boolean sendVerificationMail(String email) throws Exception {
     	try {
 		   //TODO: Check existance
@@ -63,10 +62,10 @@ public class CreateAccProcess {
     		Optional<VerificationCodes> selectedCode = repo.findByEmail(email);
     		if (selectedCode.isPresent()) {
 				if(selectedCode.get().getCode().equals(code)) {
-					logObj = obj1.getLogObj();
+//					logObj = obj1.getLogObj();
 		    		userInfoObj.save(userInfo);
 		    		userAccObj.save(accInfo);
-		    		logObj.info("Data saved (CreateAccService.java)");
+		    		obj1.getLogObj().info("Data saved (CreateAccService.java)");
 		    		return "Data saved";
 				}else {
 					return "Invalid verification code";
@@ -75,7 +74,7 @@ public class CreateAccProcess {
 				return "Verification code cannot find";
 			}
     	}catch(Exception e) {
-    		logObj.info("Error occured when savind data (createAccProcess) : " + e.toString());
+    		obj1.getLogObj().info("Error occured when savind data (createAccProcess) : " + e.toString());
     		throw new Exception("Error occured when saving data (CreateAccProcess) : " + e.toString());
     	}
     }
