@@ -1,7 +1,9 @@
 package com.example.bookTicket.Service;
 
-import com.example.bookTicket.Request.BookTicketRequest;
+import org.springframework.stereotype.Service;
 
+import com.example.bookTicket.Request.BookTicketRequest;
+@Service
 public class BookTicketProcess {
 	public boolean bookingProcess(BookTicketRequest bookTicketRequest) throws Exception {
 		try {

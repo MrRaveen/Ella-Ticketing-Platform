@@ -24,11 +24,9 @@ public class TicketSeats {
 	@JoinColumn(name = "SEAT_ID", referencedColumnName = "SEAT_ID", nullable = false)
 	private SeatInfo seatInfo;
 	public TicketSeats() {
-		// TODO Auto-generated constructor stub
 	}
-	public TicketSeats(Long s_id, BookedTickets bookedTickets, SeatInfo seatInfo) {
+	public TicketSeats(BookedTickets bookedTickets, SeatInfo seatInfo) {
 		super();
-		this.s_id = s_id;
 		this.bookedTickets = bookedTickets;
 		this.seatInfo = seatInfo;
 	}
