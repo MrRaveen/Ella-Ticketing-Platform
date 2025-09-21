@@ -1,8 +1,6 @@
 package com.example.bookTicket.Entity;
 import java.time.LocalDate;
-
 import com.example.bookTicket.Configuration.StringCryptoConverter;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;

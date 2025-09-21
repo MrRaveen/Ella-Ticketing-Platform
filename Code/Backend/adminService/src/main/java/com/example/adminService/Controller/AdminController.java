@@ -25,6 +25,7 @@ import com.example.adminService.Request.CreatePlatformRequest;
 import com.example.adminService.Request.CreateRouteRequest;
 import com.example.adminService.Request.CreateStationRequest;
 import com.example.adminService.Request.CreateTrainRequest;
+import com.example.adminService.Request.CreateTrainSeatClassReq;
 import com.example.adminService.Request.CreateTrainTimeRequest;
 import com.example.adminService.Request.UpdateStationByID;
 import com.example.adminService.Request.UpdateTrainsByIDRequest;
@@ -48,8 +49,8 @@ public class AdminController {
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN')")
 	public ResponseEntity<?> addTrainInfo(@RequestBody AddTrainInfoRequest addTrainInfoRequest){
 		try {
-			TrainInfo trainInfo = new TrainInfo(addTrainInfoRequest.getName(), addTrainInfoRequest.getReportingNo(),addTrainInfoRequest.getEngineCode(), addTrainInfoRequest.getServiceStartedYear(), addTrainInfoRequest.getManufacturedYear(), addTrainInfoRequest.getAvgSpeed(), addTrainInfoRequest.getTotOperationHours(), addTrainInfoRequest.getAccidentsCount(), addTrainInfoRequest.getTrainStatus(), addTrainInfoRequest.getTrainClass());
-			boolean result = createTrainService.createTrainInfoProcess(trainInfo);
+			TrainInfo trainInfo = new TrainInfo(addTrainInfoRequest.getName(), addTrainInfoRequest.getReportingNo(),addTrainInfoRequest.getEngineCode(), addTrainInfoRequest.getServiceStartedYear(), addTrainInfoRequest.getManufacturedYear(), addTrainInfoRequest.getAvgSpeed(), addTrainInfoRequest.getTotOperationHours(), addTrainInfoRequest.getAccidentsCount(), addTrainInfoRequest.getTrainStatus(), addTrainInfoRequest.getTrainClass(),addTrainInfoRequest.getTrainSeatsCount());
+			boolean result = createTrainService.createTrainInfoProcess(trainInfo,addTrainInfoRequest.getTrainSeatInfoRequests());
 			//log the instance
 			return ResponseEntity.status(200).body("Train info created");			
 		} catch (Exception e) {
@@ -176,6 +177,20 @@ public class AdminController {
 			return ResponseEntity.status(500).body("Some values are empty :" + e.toString());	
 		}
 		catch (Exception e) {
+			return ResponseEntity.status(500).body("Error occured :" + e.toString());	
+		}
+	}
+	//create train seat class
+	@PostMapping("/createTrainSeatClass")
+	@PreAuthorize("hasAnyRole('ROLE_ADMIN')")
+	public ResponseEntity<?>createTrainSeatClass(@RequestBody CreateTrainSeatClassReq createTrainSeatClassReq){
+		try {
+			if (createTrainService.createTrainSeatClass(createTrainSeatClassReq)) {
+				return ResponseEntity.status(200).body("Data saved");
+			}else {
+				return ResponseEntity.status(401).body("Data not saved");
+			}
+		} catch (Exception e) {
 			return ResponseEntity.status(500).body("Error occured :" + e.toString());	
 		}
 	}

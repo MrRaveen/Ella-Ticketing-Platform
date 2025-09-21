@@ -1,4 +1,4 @@
-package com.example.adminService.Entity;
+package com.example.bookTicket.Entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -7,7 +7,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -22,10 +21,10 @@ public class SeatCount {
 	private int seatRemainingCount;
 	@Column(name = "TOT_CAPACITY")
 	private int totCapacity;
-	@ManyToOne(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "TIME_ID", referencedColumnName = "TIME_ID", nullable = false)
 	private TrainTime trainTime;
-	@ManyToOne(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "CLASS_ID", referencedColumnName = "CLASS_ID", nullable = false)
 	private TrainSeatClass trainSeatClass;
 	public int getSeatCountID() {

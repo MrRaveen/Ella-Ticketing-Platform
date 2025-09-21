@@ -1,4 +1,4 @@
-package com.example.adminService.Entity;
+package com.example.bookTicket.Entity;
 
 import java.time.LocalDate;
 
@@ -19,7 +19,7 @@ import jakarta.persistence.Table;
 @Table(name = "BOKKED_TICKETS")
 public class BookedTickets {
 	    @Id
-	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    @GeneratedValue(strategy = GenerationType.IDENTITY) // works for Oracle 12c+ with IDENTITY
 	    @Column(name = "TICKET_ID")
 	    private int ticketID;
 	    @Column(name = "RESERVED_SEAT_COUNT")

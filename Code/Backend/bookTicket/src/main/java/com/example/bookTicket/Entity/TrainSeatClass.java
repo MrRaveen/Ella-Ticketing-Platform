@@ -1,6 +1,4 @@
-package com.example.adminService.Entity;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
+package com.example.bookTicket.Entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,13 +11,10 @@ public class TrainSeatClass {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CLASS_ID")
-	@JsonProperty("classID")
     private int classID;
 	@Column(name = "PRICE_PERSON")
-	@JsonProperty("pricePerson")
 	private double pricePerson;
 	@Column(name = "CLASS_NAME")
-	@JsonProperty("classNameString")
 	private String classNameString;
 	public int getClassID() {
 		return classID;

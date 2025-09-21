@@ -11,14 +11,20 @@ import com.example.adminService.Entity.Admin;
 import com.example.adminService.Entity.PlatformInfo;
 import com.example.adminService.Entity.Stations;
 import com.example.adminService.Entity.TrainInfo;
+import com.example.adminService.Entity.TrainSeatClass;
+import com.example.adminService.Entity.TrainSeatInfo;
 import com.example.adminService.Entity.Trains;
 import com.example.adminService.Repository.AdminRepo;
 import com.example.adminService.Repository.PlatformRepo;
 import com.example.adminService.Repository.StationRepo;
 import com.example.adminService.Repository.TrainInfoRepo;
+import com.example.adminService.Repository.TrainSeatClassRepo;
+import com.example.adminService.Repository.TrainSeatInfoRepo;
 import com.example.adminService.Repository.TrainsRepo;
 import com.example.adminService.Request.CreatePlatformRequest;
 import com.example.adminService.Request.CreateTrainRequest;
+import com.example.adminService.Request.CreateTrainSeatClassReq;
+import com.example.adminService.Request.TrainSeatInfoRequest;
 import com.example.adminService.Request.UpdateTrainsByIDRequest;
 
 @Service
@@ -32,11 +38,26 @@ public class CreateTrainService {
 	@Autowired
 	private AdminRepo adminRepo;
 	@Autowired
+	private TrainSeatInfoRepo trainSeatInfoRepo;
+	@Autowired
 	private PlatformRepo platformRepo;
-	public boolean createTrainInfoProcess(TrainInfo trainInfo) throws Exception {
+	@Autowired
+	private TrainSeatClassRepo trainSeatClassRepo;
+	public boolean createTrainInfoProcess(TrainInfo trainInfo, List<TrainSeatInfoRequest> trainSeatInfoRequests) throws Exception {
 		try {
-			trainInfoRepo.save(trainInfo);
-			return true;
+			TrainInfo createdTrainInfo = trainInfoRepo.save(trainInfo);
+			if (trainSeatInfoRequests.isEmpty()) {
+				return true;	
+			}else {
+				trainSeatInfoRequests.forEach(data ->{
+					Optional<TrainSeatClass> foundSeatClass = trainSeatClassRepo.findById(data.getTrainSeatClass().getClassID());
+					if (foundSeatClass.isPresent()) {
+						TrainSeatInfo newTrainSeatInfo = new TrainSeatInfo(data.getSeat_count(), createdTrainInfo, data.getTrainSeatClass());
+						trainSeatInfoRepo.save(newTrainSeatInfo);
+					}
+				});
+				return true;
+			}
 		} catch (Exception e) {
 			throw new Exception("Error occured (CreateTrainService : createTrainInfoProcess) : " + e.toString());
 		}
@@ -152,6 +173,15 @@ public class CreateTrainService {
 			return true;
 		} catch (Exception e) {
 			throw new Exception("Error occured (CreateTrainService : createTrainProcess) : " + e.toString());
+		}
+	}
+	public boolean createTrainSeatClass(CreateTrainSeatClassReq createTrainSeatClassReq) throws Exception {
+		try {
+			TrainSeatClass newTrainSeatClass = new TrainSeatClass(createTrainSeatClassReq.getPricePerson(), createTrainSeatClassReq.getClassNameString());
+			trainSeatClassRepo.save(newTrainSeatClass);
+			return true;
+		} catch (Exception e) {
+			throw new Exception("Error occured (CreateTrainService : createTrainSeatClass) : " + e.toString());
 		}
 	}
 }

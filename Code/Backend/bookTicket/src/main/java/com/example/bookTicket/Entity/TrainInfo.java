@@ -1,115 +1,159 @@
-package com.example.adminService.Request;
+package com.example.bookTicket.Entity;
 
-import java.util.List;
-
-import com.example.adminService.Entity.TrainClass;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class AddTrainInfoRequest {
-	@JsonProperty("Name")
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "TRAIN_INFO")
+public class TrainInfo {
+    
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "TRAIN_ID")
+	@JsonProperty("trainId")
+    private int trainId;
+
+    @Column(name = "NAME")
+    @JsonProperty("name")
     private String name;
-    @JsonProperty("ReportingNo")
+
+    @Column(name = "REPORTING_NO")
+    @JsonProperty("reportingNo")
     private String reportingNo;
-    @JsonProperty("EngineCode")
+
+    @Column(name = "ENGINE_CODE")
+    @JsonProperty("engineCode")
     private String engineCode;
-    @JsonProperty("ServiceStartedYear")
+
+    @Column(name = "SERVICE_STARTED_YEAR")
+    @JsonProperty("serviceStartedYear")
     private Integer serviceStartedYear;
-    @JsonProperty("ManufacturedYear")
+
+    @Column(name = "MANUFACTURED_YEAR")
+    @JsonProperty("manufacturedYear")
     private Integer manufacturedYear;
-    @JsonProperty("AvgSpeed")
+
+    @Column(name = "AVG_SPEED")
+    @JsonProperty("avgSpeed")
     private Double avgSpeed;
-    @JsonProperty("TotOperationHours")
+
+    @Column(name = "TOT_OPERATION_H")
+    @JsonProperty("totOperationHours")
     private Double totOperationHours;
-    @JsonProperty("AccidentCount")
+
+    @Column(name = "ACCIDENT_COUNT")
+    @JsonProperty("accidentsCount")
     private Integer accidentsCount;
-    @JsonProperty("TrainStatus")
-    private com.example.adminService.Entity.trainStats trainStatus;
-    @JsonProperty("TrainClass")
+
+    @Column(name = "TRAIN_STAT")
+    @JsonProperty("trainStatus")
+    private trainStats trainStatus;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CALSS_ID", referencedColumnName = "CLASS_ID", nullable = false)
+    @JsonProperty("trainClass")
     private TrainClass trainClass;
-    @JsonProperty("trainSeats")
-    private int trainSeatsCount;
-    @JsonProperty("TrainSeatInfo")
-    private List<TrainSeatInfoRequest> trainSeatInfoRequests;
-    
-    
-	public List<TrainSeatInfoRequest> getTrainSeatInfoRequests() {
-		return trainSeatInfoRequests;
+	public int getTrainId() {
+		return trainId;
 	}
-	public void setTrainSeatInfoRequests(List<TrainSeatInfoRequest> trainSeatInfoRequests) {
-		this.trainSeatInfoRequests = trainSeatInfoRequests;
+
+	public void setTrainId(int trainId) {
+		this.trainId = trainId;
 	}
-	public int getTrainSeatsCount() {
-		return trainSeatsCount;
-	}
-	public void setTrainSeatsCount(int trainSeatsCount) {
-		this.trainSeatsCount = trainSeatsCount;
-	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getReportingNo() {
 		return reportingNo;
 	}
+
 	public void setReportingNo(String reportingNo) {
 		this.reportingNo = reportingNo;
 	}
+
 	public String getEngineCode() {
 		return engineCode;
 	}
+
 	public void setEngineCode(String engineCode) {
 		this.engineCode = engineCode;
 	}
+
 	public Integer getServiceStartedYear() {
 		return serviceStartedYear;
 	}
+
 	public void setServiceStartedYear(Integer serviceStartedYear) {
 		this.serviceStartedYear = serviceStartedYear;
 	}
+
 	public Integer getManufacturedYear() {
 		return manufacturedYear;
 	}
+
 	public void setManufacturedYear(Integer manufacturedYear) {
 		this.manufacturedYear = manufacturedYear;
 	}
+
 	public Double getAvgSpeed() {
 		return avgSpeed;
 	}
+
 	public void setAvgSpeed(Double avgSpeed) {
 		this.avgSpeed = avgSpeed;
 	}
+
 	public Double getTotOperationHours() {
 		return totOperationHours;
 	}
+
 	public void setTotOperationHours(Double totOperationHours) {
 		this.totOperationHours = totOperationHours;
 	}
+
 	public Integer getAccidentsCount() {
 		return accidentsCount;
 	}
+
 	public void setAccidentsCount(Integer accidentsCount) {
 		this.accidentsCount = accidentsCount;
 	}
-	public com.example.adminService.Entity.trainStats getTrainStatus() {
+
+	public trainStats getTrainStatus() {
 		return trainStatus;
 	}
-	public void setTrainStatus(com.example.adminService.Entity.trainStats trainStatus) {
+
+	public void setTrainStatus(trainStats trainStatus) {
 		this.trainStatus = trainStatus;
 	}
+
 	public TrainClass getTrainClass() {
 		return trainClass;
 	}
+
 	public void setTrainClass(TrainClass trainClass) {
 		this.trainClass = trainClass;
 	}
-	public AddTrainInfoRequest(String name, String reportingNo, String engineCode, Integer serviceStartedYear,
+
+	public TrainInfo(String name, String reportingNo, String engineCode, Integer serviceStartedYear,
 			Integer manufacturedYear, Double avgSpeed, Double totOperationHours, Integer accidentsCount,
-			com.example.adminService.Entity.trainStats trainStatus, TrainClass trainClass, int trainSeatsCount
-			, List<TrainSeatInfoRequest> trainSeatInfoRequests) {
+			trainStats trainStatus, TrainClass trainClass) {
 		super();
-		this.trainSeatsCount = trainSeatsCount;
 		this.name = name;
 		this.reportingNo = reportingNo;
 		this.engineCode = engineCode;
@@ -120,6 +164,8 @@ public class AddTrainInfoRequest {
 		this.accidentsCount = accidentsCount;
 		this.trainStatus = trainStatus;
 		this.trainClass = trainClass;
-		this.trainSeatInfoRequests = trainSeatInfoRequests;
+	}
+	public TrainInfo() {
+		super();
 	}
 }

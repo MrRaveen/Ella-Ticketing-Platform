@@ -1,13 +1,10 @@
-package com.example.adminService.Entity;
-
-import java.util.Set;
+package com.example.bookTicket.Entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -23,8 +20,6 @@ public class TrainClass {
 	    private String classLetter;
 	    @Column(name = "DESCRIPTION")
 	    private String description;
-	    @OneToMany(mappedBy = "trainClass")
-	    private Set<TrainInfo> trainInfos;
 		public int getClassId() {
 			return classId;
 		}
