@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -21,10 +22,10 @@ public class SeatCount {
 	private int seatRemainingCount;
 	@Column(name = "TOT_CAPACITY")
 	private int totCapacity;
-	@OneToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "TIME_ID", referencedColumnName = "TIME_ID", nullable = false)
 	private TrainTime trainTime;
-	@OneToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "CLASS_ID", referencedColumnName = "CLASS_ID", nullable = false)
 	private TrainSeatClass trainSeatClass;
 	public int getSeatCountID() {

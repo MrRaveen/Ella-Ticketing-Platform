@@ -34,10 +34,9 @@ public class SeatInfo {
 	public SeatInfo() {
 		// TODO Auto-generated constructor stub
 	}
-	public SeatInfo(Long seatID, boolean occupationStat, boolean expieryStat, String seatCode,
+	public SeatInfo(boolean occupationStat, boolean expieryStat, String seatCode,
 			TrainSeatClass trainSeatClass, TrainTime trainTime) {
 		super();
-		this.seatID = seatID;
 		this.occupationStat = occupationStat;
 		this.expieryStat = expieryStat;
 		this.seatCode = seatCode;

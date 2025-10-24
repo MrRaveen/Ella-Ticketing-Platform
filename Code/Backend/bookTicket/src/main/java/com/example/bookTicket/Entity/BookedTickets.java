@@ -19,7 +19,7 @@ import jakarta.persistence.Table;
 @Table(name = "BOKKED_TICKETS")
 public class BookedTickets {
 	    @Id
-	    @GeneratedValue(strategy = GenerationType.IDENTITY) // works for Oracle 12c+ with IDENTITY
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    @Column(name = "TICKET_ID")
 	    private int ticketID;
 	    @Column(name = "RESERVED_SEAT_COUNT")

@@ -8,8 +8,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.example.bookTicket.Configuration.StringCryptoConverter;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
@@ -29,19 +27,14 @@ public class Admin{
     @Column(name = "USERNAME")
     private String username;
     @Column(name = "PASSWORD")
-    @Convert(converter = StringCryptoConverter.class)
     private String password;
     @Column(name = "F_NAME")
-    @Convert(converter = StringCryptoConverter.class)
     private String fname;
     @Column(name = "L_NAME")
-    @Convert(converter = StringCryptoConverter.class)
     private String lname;
     @Column(name = "CONTACT_NO")
-    @Convert(converter = StringCryptoConverter.class)
     private String contactNo;
     @Column(name = "ADDRESS")
-    @Convert(converter = StringCryptoConverter.class)
     private String address;
     @Column(name = "JOINED_DATE")
     private LocalDate joinedDate;

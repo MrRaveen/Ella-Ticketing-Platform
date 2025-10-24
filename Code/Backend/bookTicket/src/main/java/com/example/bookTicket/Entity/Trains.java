@@ -9,6 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -26,8 +27,8 @@ public class Trains {
 	private boolean status;
 	@Column(name = "TRAIN_NAME")
 	private String trainNameString;
-	@OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "TRAIN_ID", referencedColumnName = "TRAIN_ID", nullable = false)
+	@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "TRAIN_INFO_ID", referencedColumnName = "TRAIN_ID")
     private TrainInfo trainInfo;
 	@OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ADMIN_ID", referencedColumnName = "ADMIN_ID", nullable = false)

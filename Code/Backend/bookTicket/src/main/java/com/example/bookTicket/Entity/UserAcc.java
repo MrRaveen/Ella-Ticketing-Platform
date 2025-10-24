@@ -5,7 +5,6 @@ import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
 
-import com.example.bookTicket.Configuration.StringCryptoConverter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Entity
@@ -32,7 +31,6 @@ public class UserAcc{
 	    private String email;
 	    
 	    @Column(name = "USER_PASSWORD", length = 800)
-	    @Convert(converter = StringCryptoConverter.class)
 	    private String userPassword;
 	    // Many accounts belong to one user
 	    @OneToOne(fetch = FetchType.LAZY)
@@ -116,7 +114,5 @@ public class UserAcc{
 			this.user = user;
 		}
 
-		public UserAcc() {
-			
-		}
+		public UserAcc() {}
 }

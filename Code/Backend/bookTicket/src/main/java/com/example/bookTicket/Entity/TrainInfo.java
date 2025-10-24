@@ -9,6 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -54,14 +55,28 @@ public class TrainInfo {
     @Column(name = "ACCIDENT_COUNT")
     @JsonProperty("accidentsCount")
     private Integer accidentsCount;
-
+    
+    @Column(name = "TRAIN_SEATS")
+    @JsonProperty("trainSeats")
+    private int trainSeatsCount;
+    
     @Column(name = "TRAIN_STAT")
     @JsonProperty("trainStatus")
     private trainStats trainStatus;
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "CALSS_ID", referencedColumnName = "CLASS_ID", nullable = false)
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CLASS_ID", referencedColumnName = "CLASS_ID", nullable = false)
     @JsonProperty("trainClass")
     private TrainClass trainClass;
+    
+	public int getTrainSeatsCount() {
+		return trainSeatsCount;
+	}
+
+	public void setTrainSeatsCount(int trainSeatsCount) {
+		this.trainSeatsCount = trainSeatsCount;
+	}
+
 	public int getTrainId() {
 		return trainId;
 	}
@@ -152,7 +167,7 @@ public class TrainInfo {
 
 	public TrainInfo(String name, String reportingNo, String engineCode, Integer serviceStartedYear,
 			Integer manufacturedYear, Double avgSpeed, Double totOperationHours, Integer accidentsCount,
-			trainStats trainStatus, TrainClass trainClass) {
+			trainStats trainStatus, TrainClass trainClass, int trainSeatsCount) {
 		super();
 		this.name = name;
 		this.reportingNo = reportingNo;
@@ -164,6 +179,7 @@ public class TrainInfo {
 		this.accidentsCount = accidentsCount;
 		this.trainStatus = trainStatus;
 		this.trainClass = trainClass;
+		this.trainSeatsCount = trainSeatsCount;
 	}
 	public TrainInfo() {
 		super();

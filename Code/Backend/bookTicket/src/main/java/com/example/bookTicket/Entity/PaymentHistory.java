@@ -27,16 +27,28 @@ public class PaymentHistory {
 
     @Column(name = "TIME_DATE")
     private LocalDate timeDate;
-    public PaymentHistory() {
+    @Column(name = "PAYMENT_STATUS_NUM")
+    private String paymentStatNumString;
+    
+    public String getPaymentStatNumString() {
+		return paymentStatNumString;
+	}
+
+	public void setPaymentStatNumString(String paymentStatNumString) {
+		this.paymentStatNumString = paymentStatNumString;
+	}
+
+	public PaymentHistory() {
 		super();
 	}
 
-	public PaymentHistory(boolean status, String paymentType, String serviceName, LocalDate timeDate) {
+	public PaymentHistory(boolean status, String paymentType, String serviceName, LocalDate timeDate, String paymentStatNumString) {
 		super();
 		this.status = status;
 		this.paymentType = paymentType;
 		this.serviceName = serviceName;
 		this.timeDate = timeDate;
+		this.paymentStatNumString = paymentStatNumString;
 	}
 
 	public Long getId() {

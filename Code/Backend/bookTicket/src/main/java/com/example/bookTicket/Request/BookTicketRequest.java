@@ -3,17 +3,53 @@ package com.example.bookTicket.Request;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class BookTicketRequest {
-	 private int reservedSeatCount;
-	 private double price;
-	 private boolean status;
-	 private LocalDate bookedDate;
-	 private LocalTime bookedTime;
-	 private int returnStationID;
-	 private int trainId;
-	 private int paymentHistoryId;
-	 private int classId;
-	 private int userAccId;
+	    @JsonProperty("reservedSeatCount")
+	    private int reservedSeatCount;
+	    @JsonProperty("price")
+	    private double price;
+
+	    @JsonProperty("paymentType")
+	    private String paymentType;
+
+	    @JsonProperty("returnStationID")
+	    private int returnStationID;
+
+	    @JsonProperty("trainTimeID")
+	    private int trainTimeID;
+
+	    @JsonProperty("classId")
+	    private int classId;
+
+	    @JsonProperty("userAccId")
+	    private int userAccId;
+	    @JsonProperty("paymentStatNumString")
+	    private String paymentStatNumString;
+	    @JsonProperty("paymentMethod")
+	    private String paymentMethod;
+	    @JsonProperty("return_location")
+	    private String return_location;
+	    
+	 public String getReturn_location() {
+			return return_location;
+		}
+		public void setReturn_location(String return_location) {
+			this.return_location = return_location;
+		}
+	 public String getPaymentMethod() {
+			return paymentMethod;
+		}
+		public void setPaymentMethod(String paymentMethod) {
+			this.paymentMethod = paymentMethod;
+		}
+	 public String getPaymentStatNumString() {
+			return paymentStatNumString;
+		}
+		public void setPaymentStatNumString(String paymentStatNumString) {
+			this.paymentStatNumString = paymentStatNumString;
+		}
 	 public int getReservedSeatCount() {
 		 return reservedSeatCount;
 	 }
@@ -26,23 +62,11 @@ public class BookTicketRequest {
 	 public void setPrice(double price) {
 		 this.price = price;
 	 }
-	 public boolean isStatus() {
-		 return status;
+	 public String getPaymentType() {
+		 return paymentType;
 	 }
-	 public void setStatus(boolean status) {
-		 this.status = status;
-	 }
-	 public LocalDate getBookedDate() {
-		 return bookedDate;
-	 }
-	 public void setBookedDate(LocalDate bookedDate) {
-		 this.bookedDate = bookedDate;
-	 }
-	 public LocalTime getBookedTime() {
-		 return bookedTime;
-	 }
-	 public void setBookedTime(LocalTime bookedTime) {
-		 this.bookedTime = bookedTime;
+	 public void setPaymentType(String paymentType) {
+		 this.paymentType = paymentType;
 	 }
 	 public int getReturnStationID() {
 		 return returnStationID;
@@ -50,17 +74,11 @@ public class BookTicketRequest {
 	 public void setReturnStationID(int returnStationID) {
 		 this.returnStationID = returnStationID;
 	 }
-	 public int getTrainId() {
-		 return trainId;
+	 public int getTrainTimeID() {
+		 return trainTimeID;
 	 }
-	 public void setTrainId(int trainId) {
-		 this.trainId = trainId;
-	 }
-	 public int getPaymentHistoryId() {
-		 return paymentHistoryId;
-	 }
-	 public void setPaymentHistoryId(int paymentHistoryId) {
-		 this.paymentHistoryId = paymentHistoryId;
+	 public void setTrainTimeID(int trainTimeID) {
+		 this.trainTimeID = trainTimeID;
 	 }
 	 public int getClassId() {
 		 return classId;
@@ -74,21 +92,19 @@ public class BookTicketRequest {
 	 public void setUserAccId(int userAccId) {
 		 this.userAccId = userAccId;
 	 }
-	 public BookTicketRequest(int reservedSeatCount, double price, boolean status, LocalDate bookedDate,
-			LocalTime bookedTime, int returnStationID, int trainId, int paymentHistoryId, int classId, int userAccId) {
+	 public BookTicketRequest(int reservedSeatCount, double price, String paymentType, int returnStationID,
+			int trainTimeID, int classId, int userAccId, String paymentStatNumString, String paymentMethod, String return_location) {
 		super();
 		this.reservedSeatCount = reservedSeatCount;
 		this.price = price;
-		this.status = status;
-		this.bookedDate = bookedDate;
-		this.bookedTime = bookedTime;
+		this.paymentType = paymentType;
 		this.returnStationID = returnStationID;
-		this.trainId = trainId;
-		this.paymentHistoryId = paymentHistoryId;
+		this.trainTimeID = trainTimeID;
 		this.classId = classId;
 		this.userAccId = userAccId;
+		this.paymentStatNumString = paymentStatNumString;
+		this.paymentMethod = paymentMethod;
+		this.return_location = return_location;
 	 }
-	 public BookTicketRequest() {
-		super();
-	 }
+	 
 }

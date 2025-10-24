@@ -1,6 +1,7 @@
 package com.example.bookTicket.Entity;
 import java.time.LocalDate;
-import com.example.bookTicket.Configuration.StringCryptoConverter;
+
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
@@ -20,38 +21,30 @@ public class UserInfo {
 	    private int userId;
 
 	    @Column(name = "FNAME", length = 800)
-	    @Convert(converter = StringCryptoConverter.class)
 	    private String fname;
 
 	    @Column(name = "LNAME", length = 800)
-	    @Convert(converter = StringCryptoConverter.class)
 	    private String lname;
 
 	    @Column(name = "ADDRESS", length = 800)
-	    @Convert(converter = StringCryptoConverter.class)
 	    private String address;
 
 	    @Column(name = "DOB")
 	    private LocalDate dob;
 
 	    @Column(name = "PROVIENCE", length = 800)
-	    @Convert(converter = StringCryptoConverter.class)
 	    private String provience;
 
 	    @Column(name = "CITY", length = 800)
-	    @Convert(converter = StringCryptoConverter.class)
 	    private String city;
 
 	    @Column(name = "NIC", length = 800)
-	    @Convert(converter = StringCryptoConverter.class)
 	    private String nic;
 
 	    @Column(name = "CONTACTNO", length = 800)
-	    @Convert(converter = StringCryptoConverter.class)
 	    private String contactNo;
 
 	    @Column(name = "STREETNAME", length = 800)
-	    @Convert(converter = StringCryptoConverter.class)
 	    private String streetName;
 		public UserInfo() {
 		}
