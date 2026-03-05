@@ -1,10 +1,12 @@
 package com.example.userService.Configuration;
-
-
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.lang.NonNull;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -16,8 +18,14 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import com.example.userService.Service.JwtService;
-
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
 import java.io.IOException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.http.MediaType;
+import java.util.HashMap;
+import java.util.Map;
+
 
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
@@ -25,7 +33,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private final JwtService jwtService;
     private final UserDetailsService userDetailsService;
-
+    @Value("${security.jwt.secret-key}")
+	private String secretKey;
     public JwtAuthenticationFilter(
         JwtService jwtService,
         UserDetailsService userDetailsService,
@@ -67,6 +76,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
                     authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                     SecurityContextHolder.getContext().setAuthentication(authToken);
+                    Claims claims = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(jwt).getBody();
+                    request.setAttribute("claims", claims);
                 }
             }
 
@@ -74,5 +85,5 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         } catch (Exception exception) {
             handlerExceptionResolver.resolveException(request, response, null, exception);
         }
-    }
+    }    
 }

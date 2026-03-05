@@ -7,20 +7,43 @@ export default function AdminLogin({ onLoginSuccess, onBack }) {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault()
     setError('')
     setLoading(true)
 
-    // Simple demo validation - replace with actual API call
-    setTimeout(() => {
-      if (email === 'admin@ella.com' && password === 'admin123') {
-        onLoginSuccess()
-      } else {
-        setError('Invalid email or password. Try: admin@ella.com / admin123')
+    try {
+      const response = await fetch('http://localhost:8002/auth/adminLogin', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username: email,
+          password: password
+        })
+      })
+
+      if (!response.ok) {
+        const errorData = await response.text()
+        throw new Error(errorData || 'Login failed')
       }
+
+      const data = await response.json()
+      
+      // Store token in localStorage for authenticated requests
+      if (data.token) {
+        localStorage.setItem('authToken', data.token)
+        localStorage.setItem('tokenExpiration', data.expirationTime)
+        localStorage.setItem('adminEmail', email)
+      }
+
+      onLoginSuccess()
+    } catch (err) {
+      setError(err.message || 'Invalid email or password')
+    } finally {
       setLoading(false)
-    }, 1000)
+    }
   }
 
   return (
@@ -63,7 +86,7 @@ export default function AdminLogin({ onLoginSuccess, onBack }) {
               <div className="relative">
                 <Mail className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
                 <input
-                  type="email"
+                  type="text"
                   id="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}

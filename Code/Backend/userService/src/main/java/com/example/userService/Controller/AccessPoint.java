@@ -2,12 +2,15 @@ package com.example.userService.Controller;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,10 +21,15 @@ import com.example.userService.Repositories.UserAccRepo;
 import com.example.userService.Repositories.userInfoRepository;
 import com.example.userService.Request.createAccountRequest;
 import com.example.userService.Request.loginRequest;
+import com.example.userService.Response.BookedTicketResponse;
 import com.example.userService.Response.LoginResponse;
 import com.example.userService.Service.CreateAccProcess;
+import com.example.userService.Service.GetAllTicketInfo;
 import com.example.userService.Service.JwtService;
 import com.example.userService.Service.LoginService;
+
+import io.jsonwebtoken.Claims;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 @RestController
@@ -78,6 +86,7 @@ public class AccessPoint {
 			return ResponseEntity.status(500).body("Error occured in controller (AccessPoint) : " + e.toString());
 		}
     }
+    
     //testing only
     @GetMapping("/getAllData")
     public List<UserAcc> getPrcess(){

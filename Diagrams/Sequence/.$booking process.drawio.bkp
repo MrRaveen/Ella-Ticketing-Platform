@@ -1,0 +1,220 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.4 Chrome/138.0.7204.97 Electron/37.2.1 Safari/537.36" version="28.0.4">
+  <diagram name="Page-1" id="FzluXLITg0SmDUpq7wiQ">
+    <mxGraphModel dx="1111" dy="537" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-1" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="340" y="200" width="10" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-2" value="User" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="290" y="120" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-3" value="System" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="560" y="120" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-4" value="DB" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="860" y="120" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-5" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="610" y="200" width="10" height="1150" as="geometry" />
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-6" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="910" y="200" width="10" height="1170" as="geometry" />
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-7" value="Get the class using class ID" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" edge="1" parent="1" target="QVr4gIUErHiGrBqMbGWL-6">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="620" y="250" as="sourcePoint" />
+            <mxPoint x="780" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-9" value="loop count (must be only one row)" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="620" y="480" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="650" y="480" />
+              <mxPoint x="650" y="510" />
+            </Array>
+            <mxPoint x="620" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-11" value="Class" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="910" y="330" as="sourcePoint" />
+            <mxPoint x="620" y="330" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="820" y="330" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-13" value="Get seat counts according to train time&lt;div&gt;ID and class ID&lt;/div&gt;" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="620" y="380" as="sourcePoint" />
+            <mxPoint x="910" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-14" value="Count object" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="910" y="440.42" as="sourcePoint" />
+            <mxPoint x="620" y="440.42" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="820" y="440.42" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-15" value="check whether there are&lt;div&gt;seats for requesting reserving&amp;nbsp;&lt;/div&gt;&lt;div&gt;count&lt;/div&gt;" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="620" y="535" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="650" y="535" />
+              <mxPoint x="650" y="565" />
+            </Array>
+            <mxPoint x="620" y="565" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-16" value="if true, create the seat ID for&amp;nbsp;&lt;div&gt;each requested seat amount (+1 to prev row ID)&lt;/div&gt;" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="620" y="680" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="650" y="680" />
+              <mxPoint x="650" y="710" />
+            </Array>
+            <mxPoint x="620" y="710" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-18" value="get max seat row (from SeatInfo table)" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="620" y="600" as="sourcePoint" />
+            <mxPoint x="910" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-19" value="get row" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="910" y="650" as="sourcePoint" />
+            <mxPoint x="620" y="650" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="820" y="650" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-20" value="SeatInfo: row for each requested seat count&lt;div&gt;SeatCount: one row for each train time&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" vertex="1" parent="1">
+          <mxGeometry x="1500" width="190" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-21" value="Create the seat code" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="620" y="730" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="650" y="730" />
+              <mxPoint x="650" y="760" />
+            </Array>
+            <mxPoint x="620" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-22" value="get train time obj by train time ID" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="0.0015" width="160" relative="1" as="geometry">
+            <mxPoint x="620" y="790" as="sourcePoint" />
+            <mxPoint x="910" y="790" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-23" value="get row" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="910" y="840" as="sourcePoint" />
+            <mxPoint x="620" y="840" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="820" y="840" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-24" value="create SeatInfo obj" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="620" y="880" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="650" y="880" />
+              <mxPoint x="650" y="910" />
+            </Array>
+            <mxPoint x="620" y="910" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-25" value="Save obj for each request" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="620" y="930" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="650" y="930" />
+              <mxPoint x="650" y="960" />
+            </Array>
+            <mxPoint x="620" y="960" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-26" value="get new seat count" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="620" y="1010" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="650" y="1010" />
+              <mxPoint x="650" y="1040" />
+            </Array>
+            <mxPoint x="620" y="1040" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-27" value="save" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="0.0015" width="160" relative="1" as="geometry">
+            <mxPoint x="620" y="990" as="sourcePoint" />
+            <mxPoint x="910" y="990" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-28" value="Update new seat count" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="620" y="1059.13" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="650" y="1059.13" />
+              <mxPoint x="650" y="1089.13" />
+            </Array>
+            <mxPoint x="620" y="1089.13" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-29" value="Update" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="0.0015" width="160" relative="1" as="geometry">
+            <mxPoint x="620" y="1119.13" as="sourcePoint" />
+            <mxPoint x="910" y="1119.13" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-30" value="Create payment info row" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="620" y="1140" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="650" y="1140" />
+              <mxPoint x="650" y="1170" />
+            </Array>
+            <mxPoint x="620" y="1170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-31" value="create" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="0.0015" width="160" relative="1" as="geometry">
+            <mxPoint x="620" y="1200" as="sourcePoint" />
+            <mxPoint x="910" y="1200" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-32" value="Create BookedTickets row" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="620" y="1230" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="650" y="1230" />
+              <mxPoint x="650" y="1260" />
+            </Array>
+            <mxPoint x="620" y="1260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QVr4gIUErHiGrBqMbGWL-33" value="create" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="0.0015" width="160" relative="1" as="geometry">
+            <mxPoint x="620" y="1290" as="sourcePoint" />
+            <mxPoint x="910" y="1290" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
