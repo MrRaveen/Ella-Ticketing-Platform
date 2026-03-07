@@ -1,5 +1,7 @@
 # Ella ticketing platform
 
+Alpha stage demo: https://youtu.be/3BnAV65zlcw
+
 A safe and a modern solution for train ticketing in Ella station.
 
 ## About the project
@@ -34,5 +36,6 @@ Ensure you have the following installed on your operating system (e.g., Fedora L
 1. Clone the repository:
    ```bash
    git clone [https://github.com/RavinJayasanka/Ella-Ticketing-Platform.git](https://github.com/RavinJayasanka/Ella-Ticketing-Platform.git)
+
 
 
