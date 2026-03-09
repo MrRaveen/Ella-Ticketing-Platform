@@ -67,7 +67,7 @@ public class AccessPoint {
             return ResponseEntity.status(500).body("Error: " + e.getMessage());
         }
     }
-    @GetMapping("/logIn")
+    @PostMapping("/logIn")
     public ResponseEntity<?> loginProcess(@RequestBody loginRequest request) {
     	try {
     		UserAcc authUserAcc = loginService.loginProcess(request.getMail(),request.getPassword());
