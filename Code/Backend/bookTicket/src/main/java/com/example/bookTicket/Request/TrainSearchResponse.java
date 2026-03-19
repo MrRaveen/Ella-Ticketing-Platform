@@ -62,6 +62,7 @@ public class TrainSearchResponse {
 
     // Nested TrainDetail Class
     public static class TrainDetail {
+    	private int trainTimeID;
         private String trainName;
         private String startStation;
         private String endStation;
@@ -73,8 +74,9 @@ public class TrainSearchResponse {
         public TrainDetail() {
         }
 
-        public TrainDetail(String trainName, String startStation, String endStation, LocalTime departureTime, LocalTime arrivalTime, List<String> stops, List<AvailableClass> availableClasses) {
-            this.trainName = trainName;
+        public TrainDetail(int trainTimeID,String trainName, String startStation, String endStation, LocalTime departureTime, LocalTime arrivalTime, List<String> stops, List<AvailableClass> availableClasses) {
+            this.trainTimeID = trainTimeID;
+        	this.trainName = trainName;
             this.startStation = startStation;
             this.endStation = endStation;
             this.departureTime = departureTime;
@@ -82,8 +84,16 @@ public class TrainSearchResponse {
             this.stops = stops;
             this.availableClasses = availableClasses;
         }
+        
+        public int getTrainTimeIDString() {
+			return trainTimeID;
+		}
 
-        public String getTrainName() {
+		public void setTrainTimeIDString(int trainTimeID) {
+			this.trainTimeID = trainTimeID;
+		}
+
+		public String getTrainName() {
             return trainName;
         }
 
@@ -142,6 +152,7 @@ public class TrainSearchResponse {
 
     // Nested AvailableClass Class
     public static class AvailableClass {
+    	private int classID;
         private String className;
         private double price;
         private int seatsLeft;
@@ -150,14 +161,23 @@ public class TrainSearchResponse {
         public AvailableClass() {
         }
 
-        public AvailableClass(String className, double price, int seatsLeft, int totalCapacity) {
-            this.className = className;
+        public AvailableClass(int classID,String className, double price, int seatsLeft, int totalCapacity) {
+            this.classID = classID;
+        	this.className = className;
             this.price = price;
             this.seatsLeft = seatsLeft;
             this.totalCapacity = totalCapacity;
         }
+        
+        public int getClassIDString() {
+			return classID;
+		}
 
-        public String getClassName() {
+		public void setClassIDString(int classID) {
+			this.classID = classID;
+		}
+
+		public String getClassName() {
             return className;
         }
 
