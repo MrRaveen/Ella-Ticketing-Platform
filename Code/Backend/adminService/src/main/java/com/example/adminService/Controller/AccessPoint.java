@@ -37,7 +37,7 @@ public class AccessPoint {
 			return ResponseEntity.status(500).body("Error occured (AccessPoint) : " + e.toString());
 		}
 	}
-	@GetMapping("/adminLogin")
+	@PostMapping("/adminLogin")
 	public ResponseEntity<?> adminLogin(@RequestBody AdminLoginRequest request) {
 		try {
 			Admin admin = adminLogin.loginProcessAdmin(request.getUsername(), request.getPassword());
