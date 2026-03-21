@@ -24,6 +24,7 @@ import com.example.bookTicket.Request.TicketSearchRequest;
 import com.example.bookTicket.Request.TrainSearchResponse;
 import com.example.bookTicket.Request.TrainSearchResponse.AvailableClass;
 import com.example.bookTicket.Request.TrainSearchResponse.TrainDetail;
+import com.example.bookTicket.Response.GetAllLocationsRes;
 
 @Service
 public class GetTrainData {
@@ -38,7 +39,25 @@ public class GetTrainData {
     private TrainsRepo trainsRepo;
     @Autowired
     private StationsRepo stationsRepo;
-
+    public List<GetAllLocationsRes> getAllStationNames() {
+        try {
+            List<RouteLocations> allRouteLocations = routeLocationsRepo.findAll();
+            List<GetAllLocationsRes> returningData = new ArrayList<>();
+            
+            allRouteLocations.forEach(st -> {
+                GetAllLocationsRes stationRes = new GetAllLocationsRes(
+                    st.getLocationID(),
+                    st.getLocationNameString()
+                );
+                returningData.add(stationRes);
+            });
+            
+            return returningData;
+        } catch (Exception e) {
+            System.err.println("Error in getAllStationNames: " + e.getMessage());
+            return new ArrayList<>();
+        }
+    }
     public TrainSearchResponse getProcess(TicketSearchRequest ticketSearchData) throws Exception {
         try {
             List<TrainDetail> trainDetails = new ArrayList<>();

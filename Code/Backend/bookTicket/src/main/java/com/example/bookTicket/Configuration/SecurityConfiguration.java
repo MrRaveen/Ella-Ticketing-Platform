@@ -29,6 +29,8 @@ public class SecurityConfiguration {
         registrationBean.setFilter(filter);
         registrationBean.addUrlPatterns("/test/*");
         registrationBean.addUrlPatterns("/getTrainInfo/*");
+        registrationBean.addUrlPatterns("/getBasicDetails/*");
+        registrationBean.addUrlPatterns("/bookTrain/*");
         return registrationBean;
     }
 
