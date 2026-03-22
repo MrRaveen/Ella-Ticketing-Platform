@@ -51,6 +51,7 @@ public class AccessPoint {
 			return ResponseEntity.status(500).body("Error occured (AccessPoint) : " + e.toString());
 		}
 	}
+	
 	//test section
 	@GetMapping("test1")
 	public String test() {
