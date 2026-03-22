@@ -1,8 +1,10 @@
 package com.example.adminService.Controller;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.adminService.Entity.Admin;
 import com.example.adminService.Entity.Stations;
+import com.example.adminService.Entity.TrainClass;
 import com.example.adminService.Entity.TrainInfo;
 import com.example.adminService.Entity.Trains;
 import com.example.adminService.Entity.trainStats;
@@ -28,6 +31,8 @@ import com.example.adminService.Request.CreateTrainSeatClassReq;
 import com.example.adminService.Request.CreateTrainTimeRequest;
 import com.example.adminService.Request.UpdateStationByID;
 import com.example.adminService.Request.UpdateTrainsByIDRequest;
+import com.example.adminService.Response.TrainInfoResponse;
+import com.example.adminService.Service.CommonServices;
 import com.example.adminService.Service.CreateRouteProcess;
 import com.example.adminService.Service.CreateTrainService;
 import com.example.adminService.Service.CreateTrainTimeService;
@@ -44,6 +49,8 @@ public class AdminController {
 	private CreateTrainTimeService createTrainTimeService;
 	@Autowired
 	private CreateRouteProcess createRouteProcess;
+	@Autowired
+	private CommonServices commonServices;
 	@PostMapping("/addTrainInfo")
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN')")
 	public ResponseEntity<?> addTrainInfo(@RequestBody AddTrainInfoRequest addTrainInfoRequest){
@@ -193,6 +200,30 @@ public class AdminController {
 			return ResponseEntity.status(500).body("Error occured :" + e.toString());	
 		}
 	}
+	//get basic details
+	@GetMapping("/getAllTrainClasses")
+	@PreAuthorize("hasAnyRole('ROLE_ADMIN')")
+    public ResponseEntity<?> getAllTrainClasses() {
+        try {
+            List<TrainClass> trainClasses = commonServices.getAllTrainClasses();
+            return ResponseEntity.ok(trainClasses);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error retrieving train classes: " + e.getMessage());
+        }
+    }
+	//get train info
+	@GetMapping("/getAllTrainInfo")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
+    public ResponseEntity<?> getAllTrainInfo() {
+        try {
+            List<TrainInfoResponse> trainInfos = commonServices.getAllTrainInfo();
+            return ResponseEntity.ok(trainInfos);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(e.getMessage());
+        }
+    }
 	@GetMapping("test1")
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN')")
 	public String test() {
