@@ -1,6 +1,8 @@
 Ella ticketing platform
 =======================
 
+Alpha stage demo: https://youtu.be/3BnAV65zlcw
+
 A safe and a modern solution for train ticketing in Ella station.
 
 URL (demo run): https://youtu.be/3BnAV65zlcw?si=5RztpLkUPqwYdvh9
