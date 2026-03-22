@@ -1,21 +1,20 @@
 Ella ticketing platform
 =======================
-
-Alpha stage demo: https://youtu.be/3BnAV65zlcw
-
 A safe and a modern solution for train ticketing in Ella station.
 
 URL (demo run): https://youtu.be/3BnAV65zlcw?si=5RztpLkUPqwYdvh9
+
+About the project
+-----------------
+
+This platform aims to digitize and streamline the train ticketing process specifically tailored for the railway department. The goal is to provide a reliable, modern interface for travelers while improving operational efficiency and ticketing security for station management.
 
 Screenshots
 -----------------
 ![alt text](image.png)
 ![alt text](image-1.png)
 
-About the project
------------------
 
-This platform aims to digitize and streamline the train ticketing process specifically tailored for the railway department. The goal is to provide a reliable, modern interface for travelers while improving operational efficiency and ticketing security for station management.
 
 Technologies used
 -----------------
